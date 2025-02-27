@@ -32,36 +32,4 @@ export default defineConfig({
       },
     },
   },
-  server: {
-    port: 3000,
-    proxy: {
-      '/aurumFrontend/api': {
-        target: 'http://212.41.9.83/additional-database',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/aurumFrontend\/api/, ''),
-      },
-
-      '/apitables': {
-        target: 'http://212.41.9.83',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/apitables/, ''),
-      },
-    },
-  },
-  preview: {
-    port: 3000,
-    proxy: {
-      '/aurumFrontend/api': {
-        target: 'http://212.41.9.83/additional-database',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/aurumFrontend\/api/, ''),
-      },
-
-      '/apitables': {
-        target: 'http://212.41.9.83',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/apitables/, ''),
-      },
-    },
-  },
 });

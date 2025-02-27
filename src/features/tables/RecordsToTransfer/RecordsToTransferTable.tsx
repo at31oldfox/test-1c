@@ -40,12 +40,15 @@ export const RecordsToTransferTable = () => {
         return data;
       },
       initialPageParam: 0,
-      getNextPageParam: (lastPage) => {
+      getNextPageParam: (lastPage: TApiResponse) => {
         return lastPage.meta.page + 1;
       },
       refetchOnWindowFocus: false,
       placeholderData: keepPreviousData,
       gcTime: 1000,
+      onPageChange: (page: number) => {
+        // ... existing code ...
+      },
       /*select: (data) => {
         const _data = data?.pages?.flatMap((page) => page.data) || [];
         return { data: _data, meta: { totalRowCount: 1400 } } as TApiResponse;

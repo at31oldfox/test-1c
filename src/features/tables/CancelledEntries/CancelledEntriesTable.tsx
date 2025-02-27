@@ -41,7 +41,7 @@ export const CancelledEntriesTable = () => {
         return data;
       },
       initialPageParam: 1,
-      getNextPageParam: (lastPage) => {
+      getNextPageParam: (lastPage: TApiResponse) => {
         return lastPage.meta.page + 1;
       },
       refetchOnWindowFocus: false,

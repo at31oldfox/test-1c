@@ -40,7 +40,7 @@ export const ClientArrivedTable = () => {
         return data;
       },
       initialPageParam: 0,
-      getNextPageParam: (lastPage) => {
+      getNextPageParam: (lastPage: TApiResponse) => {
         return lastPage.meta.page + 1;
       },
       refetchOnWindowFocus: false,

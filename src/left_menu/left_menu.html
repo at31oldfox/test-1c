@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	    <meta charset="UTF-8">
+	    <title>left_menu</title>
+        <!-- STYLES -->
+        <link rel='stylesheet' href='left_menu.css'>
+        <!-- LIBS -->
+        <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="left_menu.js"></script>
+</head>
+<body>
+	    <div class="common-block" id="common-block">
+        	<div class="logo" id="logo">
+            	<img class="icon icon-logo" id="icon-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQzIiBoZWlnaHQ9IjUyIiB2aWV3Qm94PSIwIDAgMTQzIDUyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfODE5MV8xOTc2ODEpIj4KPHJlY3Qgd2lkdGg9IjE0MyIgaGVpZ2h0PSI1MiIgZmlsbD0iI0Y1RkFGRiIvPgo8cGF0aCBkPSJNNDIuMDc3OCAwSDkuMzc0ODRDNC4xOTcyNiAwIDAgNC4yMzI4NyAwIDkuNDU0MzlWNDIuNDM0OEMwIDQ3LjY1NjMgNC4xOTcyNiA1MS44ODkyIDkuMzc0ODQgNTEuODg5Mkg0Mi4wNzc4QzQ3LjI1NTQgNTEuODg5MiA1MS40NTI3IDQ3LjY1NjMgNTEuNDUyNyA0Mi40MzQ4VjkuNDU0MzlDNTEuNDUyNyA0LjIzMjg3IDQ3LjI1NTQgMCA0Mi4wNzc4IDBaIiBmaWxsPSIjRkZFNjgxIi8+CjxwYXRoIGQ9Ik02NC40MDU3IDMzLjg4NThDNjMuNjg4OCAzMy44ODU4IDYzLjAxMDcgMzMuNzg4MSA2Mi4zNzEzIDMzLjU5MjhDNjEuNzMxOSAzMy4zOTc0IDYxLjE2MDMgMzMuMTE0IDYwLjY1NjYgMzIuNzQyOEM2MC4xNTI4IDMyLjM1MiA1OS43NDU5IDMxLjg3MzIgNTkuNDM1OSAzMS4zMDY2QzU5LjE0NTMgMzAuNzIwNCA1OSAzMC4wMzY1IDU5IDI5LjI1NDlDNTkgMjguMjU4NCA1OS4xOTM4IDI3LjQ0NzUgNTkuNTgxMyAyNi44MjIyQzU5Ljk2ODggMjYuMTc3NCA2MC40OTE5IDI1LjY4ODkgNjEuMTUwNiAyNS4zNTY3QzYxLjgyODcgMjUuMDI0NiA2Mi41OTQxIDI0Ljc5OTkgNjMuNDQ2NiAyNC42ODI2QzY0LjI5OTEgMjQuNTQ1OSA2NS4xOTA0IDI0LjQ3NzUgNjYuMTIwNCAyNC40Nzc1SDY5LjExMzlDNjkuMTEzOSAyMy43OTM2IDY5LjAwNzMgMjMuMjA3MyA2OC43OTQyIDIyLjcxODhDNjguNTgxMSAyMi4yMTA4IDY4LjI0MiAyMS44MTAzIDY3Ljc3NyAyMS41MTcyQzY3LjMzMTQgMjEuMjI0MSA2Ni43NTAyIDIxLjA3NzUgNjYuMDMzMiAyMS4wNzc1QzY1LjU2ODIgMjEuMDc3NSA2NS4xMzIzIDIxLjEzNjIgNjQuNzI1NCAyMS4yNTM0QzY0LjMzNzkgMjEuMzUxMSA2My45OTg4IDIxLjUxNzIgNjMuNzA4MiAyMS43NTE2QzYzLjQzNyAyMS45NjY2IDYzLjI0MzIgMjIuMjQ5OSA2My4xMjcgMjIuNjAxNkg1OS40OTQxQzU5LjYyOTcgMjEuODAwNSA1OS45MDA5IDIxLjExNjYgNjAuMzA3OCAyMC41NUM2MC43MzQxIDE5Ljk2MzggNjEuMjQ3NSAxOS40ODUgNjEuODQ4MSAxOS4xMTM3QzYyLjQ2ODIgMTguNzQyNSA2My4xNDYzIDE4LjQ2ODkgNjMuODgyNiAxOC4yOTMxQzY0LjYxODggMTguMDk3NyA2NS4zNjQ4IDE4IDY2LjEyMDQgMThDNjguMzQ4NiAxOCA2OS45NjY0IDE4LjY0NDggNzAuOTc0IDE5LjkzNDVDNzIuMDAwOSAyMS4yMjQxIDcyLjUxNDMgMjMuMDMxNSA3Mi41MTQzIDI1LjM1NjdWMzMuNjgwN0g2OS4zNzU1TDY5LjI4ODMgMzEuNjg3NkM2OC44NDI3IDMyLjM1MiA2OC4zMDk4IDMyLjg0MDUgNjcuNjg5OCAzMy4xNTMxQzY3LjA2OTggMzMuNDY1NyA2Ni40NjkyIDMzLjY2MTEgNjUuODg3OSAzMy43MzkzQzY1LjMwNjYgMzMuODM3IDY0LjgxMjYgMzMuODg1OCA2NC40MDU3IDMzLjg4NThaTTY1LjEwMzIgMzAuOTg0MkM2NS44NzgyIDMwLjk4NDIgNjYuNTY2MSAzMC44Mzc2IDY3LjE2NjcgMzAuNTQ0NUM2Ny43NjczIDMwLjI1MTQgNjguMjQyIDI5Ljg0MTEgNjguNTkwOCAyOS4zMTM1QzY4Ljk1ODkgMjguNzg2IDY5LjE0MyAyOC4xODAzIDY5LjE0MyAyNy40OTYzVjI2Ljk5OEg2Ni4zNTI5QzY1Ljg4NzkgMjYuOTk4IDY1LjQyMjkgMjcuMDE3NiA2NC45NTc5IDI3LjA1NjdDNjQuNTEyMyAyNy4wNzYyIDY0LjEwNTQgMjcuMTU0NCA2My43MzczIDI3LjI5MTFDNjMuMzY5MSAyNy40MDg0IDYzLjA2ODggMjcuNTk0IDYyLjgzNjMgMjcuODQ4QzYyLjYyMzIgMjguMTAyMSA2Mi41MTY2IDI4LjQ2MzYgNjIuNTE2NiAyOC45MzI1QzYyLjUxNjYgMjkuNDAxNSA2Mi42MzI5IDI5Ljc4MjUgNjIuODY1NCAzMC4wNzU2QzYzLjExNzMgMzAuMzY4NyA2My40MzcgMzAuNTkzNCA2My44MjQ1IDMwLjc0OTdDNjQuMjMxMyAzMC45MDYgNjQuNjU3NiAzMC45ODQyIDY1LjEwMzIgMzAuOTg0MlpNODIuNjcxNCAzMy44ODU4QzgwLjQ2MiAzMy44ODU4IDc4Ljc2NjcgMzMuMzA5NCA3Ny41ODU1IDMyLjE1NjZDNzYuNDIyNiAzMS4wMDM3IDc1Ljg0MTMgMjkuMjQ1MiA3NS44NDEzIDI2Ljg4MDhWMTguMjM0NUg3OS4zODdWMjYuNjQ2M0M3OS4zODcgMjcuNDY3IDc5LjQ5MzMgMjguMTgwMyA3OS43MDY2IDI4Ljc4NkM3OS45Mzk0IDI5LjM5MTcgODAuMjk4IDI5Ljg2MDYgODAuNzgyMyAzMC4xOTI4QzgxLjI4NTUgMzAuNTA1NCA4MS45MTUyIDMwLjY2MTggODIuNjcxNCAzMC42NjE4QzgzLjQ4NDcgMzAuNjYxOCA4NC4xMjQ1IDMwLjQ5NTcgODQuNTg5NCAzMC4xNjM1Qzg1LjA3MzggMjkuODExOCA4NS40MTI4IDI5LjMzMzEgODUuNjA2NiAyOC43Mjc0Qzg1LjgwMDMgMjguMTIxNiA4NS44OTcyIDI3LjQyNzkgODUuODk3MiAyNi42NDYzVjE4LjIzNDVIODkuNDQyNVYyNi44ODA4Qzg5LjQ0MjUgMjkuMzAzOCA4OC44NDI1IDMxLjA4MTkgODcuNjQwOSAzMi4yMTUyQzg2LjQ1ODkgMzMuMzI5IDg0LjgwMjcgMzMuODg1OCA4Mi42NzE0IDMzLjg4NThaTTkyLjgxNTIgMzMuNjgwN1YxOC4yMzQ1SDk2LjA0MDlMOTYuMjQ0OCAyMC4yNTY5Qzk2LjYzMjMgMTkuNjcwNyA5Ny4wNjgzIDE5LjIyMTIgOTcuNTUyNyAxOC45MDg2Qzk4LjA1NTggMTguNTc2NCA5OC41ODg2IDE4LjM0MTkgOTkuMTUxMSAxOC4yMDUyQzk5LjczMjMgMTguMDY4NCAxMDAuMzE0IDE4IDEwMC44OTUgMThDMTAxLjEwNyAxOCAxMDEuMzAxIDE4IDEwMS40NzYgMThDMTAxLjY3IDE4IDEwMS44MjUgMTguMDA5OCAxMDEuOTQxIDE4LjAyOTNWMjEuNDI5MkgxMDEuMDFDMTAwLjAwMyAyMS40MjkyIDk5LjE1MTEgMjEuNjI0NiA5OC40NTM0IDIyLjAxNTRDOTcuNzU1OCAyMi40MDYyIDk3LjIzMjMgMjIuOTYzMSA5Ni44ODM5IDIzLjY4NkM5Ni41MzU1IDI0LjQwOTEgOTYuMzYwNSAyNS4yOTgxIDk2LjM2MDUgMjYuMzUzMlYzMy42ODA3SDkyLjgxNTJaTTExMC43OTggMzMuODg1OEMxMDguNTg5IDMzLjg4NTggMTA2Ljg5MyAzMy4zMDk0IDEwNS43MTEgMzIuMTU2NkMxMDQuNTQ5IDMxLjAwMzcgMTAzLjk2NyAyOS4yNDUyIDEwMy45NjcgMjYuODgwOFYxOC4yMzQ1SDEwNy41MTRWMjYuNjQ2M0MxMDcuNTE0IDI3LjQ2NyAxMDcuNjIgMjguMTgwMyAxMDcuODMzIDI4Ljc4NkMxMDguMDY2IDI5LjM5MTcgMTA4LjQyNCAyOS44NjA2IDEwOC45MDggMzAuMTkyOEMxMDkuNDEyIDMwLjUwNTQgMTEwLjA0MiAzMC42NjE4IDExMC43OTggMzAuNjYxOEMxMTEuNjExIDMwLjY2MTggMTEyLjI1MSAzMC40OTU3IDExMi43MTYgMzAuMTYzNUMxMTMuMiAyOS44MTE4IDExMy41MzkgMjkuMzMzMSAxMTMuNzMzIDI4LjcyNzRDMTEzLjkyNyAyOC4xMjE2IDExNC4wMjQgMjcuNDI3OSAxMTQuMDI0IDI2LjY0NjNWMTguMjM0NUgxMTcuNTY5VjI2Ljg4MDhDMTE3LjU2OSAyOS4zMDM4IDExNi45NjggMzEuMDgxOSAxMTUuNzY3IDMyLjIxNTJDMTE0LjU4NSAzMy4zMjkgMTEyLjkyOSAzMy44ODU4IDExMC43OTggMzMuODg1OFpNMTIwLjk0MiAzMy42ODA3VjE4LjIzNDVIMTI0LjE5NkwxMjQuNDI5IDE5Ljk5MzFDMTI0LjgxNyAxOS40NjU1IDEyNS4yMzMgMTkuMDY0OSAxMjUuNjc4IDE4Ljc5MTNDMTI2LjE0NCAxOC40OTgzIDEyNi42MTggMTguMjkzMSAxMjcuMTAzIDE4LjE3NTlDMTI3LjYwNyAxOC4wNTg2IDEyOC4wODIgMTggMTI4LjUyNyAxOEMxMjkuNDk2IDE4IDEzMC4zMTkgMTguMTk1NCAxMzAuOTk3IDE4LjU4NjJDMTMxLjY5NSAxOC45NzcgMTMyLjIzNyAxOS41NjMyIDEzMi42MjUgMjAuMzQ0OEMxMzMuMDEyIDE5Ljc5NzcgMTMzLjQ0OCAxOS4zNTggMTMzLjkzMiAxOS4wMjU4QzEzNC40MTcgMTguNjc0MSAxMzQuOTMxIDE4LjQyMDEgMTM1LjQ3MyAxOC4yNjM4QzEzNi4wMTUgMTguMDg3OSAxMzYuNTg3IDE4IDEzNy4xODggMThDMTM4LjM3IDE4IDEzOS4zMTkgMTguMjU0IDE0MC4wMzYgMTguNzYyQzE0MC43NTMgMTkuMjUwNSAxNDEuMjc2IDE5LjkzNDUgMTQxLjYwNSAyMC44MTM4QzE0MS45MzUgMjEuNjczNSAxNDIuMSAyMi42NjAyIDE0Mi4xIDIzLjc3NFYzMy42ODA3SDEzOC41NTNWMjQuOTE3MUMxMzguNTUzIDI0LjUyNjMgMTM4LjUzNSAyNC4xMTYgMTM4LjQ5NiAyMy42ODZDMTM4LjQ1NyAyMy4yNTYyIDEzOC4zNSAyMi44NTU2IDEzOC4xNzYgMjIuNDg0NEMxMzguMDIxIDIyLjExMzEgMTM3Ljc4OSAyMS44MTAzIDEzNy40NzggMjEuNTc1OEMxMzcuMTY4IDIxLjM0MTMgMTM2LjczMiAyMS4yMjQxIDEzNi4xNzEgMjEuMjI0MUMxMzUuNjA5IDIxLjIyNDEgMTM1LjE0MyAyMS4zNTExIDEzNC43NzUgMjEuNjA1MUMxMzQuNDI3IDIxLjgzOTYgMTM0LjEzNiAyMi4xNjIgMTMzLjkwMyAyMi41NzIzQzEzMy42OSAyMi45NjMxIDEzMy41MzUgMjMuNDAyNyAxMzMuNDM5IDIzLjg5MTNDMTMzLjM2MSAyNC4zNjAyIDEzMy4zMjIgMjQuODI5MiAxMzMuMzIyIDI1LjI5ODFWMzMuNjgwN0gxMjkuNzc3VjI0Ljg4NzhDMTI5Ljc3NyAyNC41MTY1IDEyOS43NDggMjQuMTI1OCAxMjkuNjg5IDIzLjcxNTRDMTI5LjY1MSAyMy4yODU1IDEyOS41NTQgMjIuODg0OSAxMjkuMzk5IDIyLjUxMzdDMTI5LjI2NCAyMi4xMjI5IDEyOS4wMzEgMjEuODEwMyAxMjguNzAxIDIxLjU3NThDMTI4LjM5MiAyMS4zNDEzIDEyNy45NTUgMjEuMjI0MSAxMjcuMzkzIDIxLjIyNDFDMTI2LjU4IDIxLjIyNDEgMTI1Ljk2IDIxLjQ0ODggMTI1LjUzMyAyMS44OTgyQzEyNS4xMjcgMjIuMzQ3NiAxMjQuODQ2IDIyLjg5NDcgMTI0LjY5MSAyMy41Mzk1QzEyNC41NTUgMjQuMTg0NCAxMjQuNDg3IDI0Ljc5OTkgMTI0LjQ4NyAyNS4zODZWMzMuNjgwN0gxMjAuOTQyWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTMzLjYyNjIgNDAuMDIyN0MzMi43MjcgNDAuNDc3MyAzMS43MzggNDAuODg2MyAzMC42NTkgNDEuMjVDMjguOTUwNSA0MS43NSAyNy4yNDIxIDQyIDI1LjUzMzcgNDJDMjIuNzkxMyA0MiAyMC4zMTg1IDQxLjQ3NzMgMTguMTE1NiA0MC40MzE4QzE1LjkxMjcgMzkuNDMxOCAxNC4wNjk0IDM4LjEzNjQgMTIuNTg1NyAzNi41NDU1QzExLjA1NzIgMzQuOTU0NSA5LjkzMzIgMzMuMTgxOCA5LjIxMzg3IDMxLjIyNzNDOC40MDQ2MiAyOS4yNzI3IDggMjcuMzQwOSA4IDI1LjQzMThDOCAyMy41MjI3IDguNDA0NjIgMjEuNTkwOSA5LjIxMzg3IDE5LjYzNjRDOS45MzMyIDE3LjcyNzMgMTEuMDU3MiAxNS45NzczIDEyLjU4NTcgMTQuMzg2NEMxNC4wNjk0IDEyLjc5NTUgMTUuOTEyNyAxMS41IDE4LjExNTYgMTAuNUMyMC4yMjg3IDkuNSAyMi43MDEzIDkgMjUuNTMzNyA5QzI4LjQxMSA5IDMwLjkwNjIgOS41IDMzLjAxOTMgMTAuNUMzNS4yNjcyIDExLjU0NTUgMzcuMDg4IDEyLjgxODIgMzguNDgxNyAxNC4zMTgyQzQwLjAxMDMgMTUuOTA5MSA0MS4xMzQyIDE3LjY4MTggNDEuODUzNiAxOS42MzY0QzQyLjYxNzkgMjEuNjgxOCA0MyAyMy42MTM3IDQzIDI1LjQzMThWNDEuMzE4MkgzNS4xMDk4VjI1LjQzMThDMzUuMTA5OCAyNC4xNTkxIDM0Ljg4NSAyMi45NzczIDM0LjQzNTUgMjEuODg2NEMzMy45ODU5IDIwLjc1IDMzLjMzNCAxOS43MjczIDMyLjQ3OTggMTguODE4MkMzMS42MjU2IDE3Ljk1NDYgMzAuNjE0IDE3LjI1IDI5LjQ0NTEgMTYuNzA0NUMyOC4yNzYyIDE2LjE1OTEgMjYuOTcyNCAxNS44ODY0IDI1LjUzMzcgMTUuODg2NEMyNC4wOTUgMTUuODg2NCAyMi44MTM3IDE2LjE1OTEgMjEuNjg5OCAxNi43MDQ1QzIwLjQ3NTkgMTcuMjUgMTkuNDQxOSAxNy45NTQ2IDE4LjU4NzcgMTguODE4MkMxNy43Nzg0IDE5LjYzNjQgMTcuMTI2NSAyMC42NTkxIDE2LjYzMiAyMS44ODY0QzE2LjEzNzQgMjMuMTEzNiAxNS44OTAyIDI0LjI5NTUgMTUuODkwMiAyNS40MzE4QzE1Ljg5MDIgMjYuNzA0NSAxNi4xNTk5IDI3LjkzMTggMTYuNjk5NCAyOS4xMTM2QzE3LjE0OSAzMC4yMDQ1IDE3Ljg0NTkgMzEuMjI3MyAxOC43OSAzMi4xODE4QzE5LjY0NDIgMzMuMDQ1NCAyMC42NzgyIDMzLjcyNzMgMjEuODkyMSAzNC4yMjczQzIzLjEwNiAzNC43MjczIDI0LjMxOTggMzQuOTc3MyAyNS41MzM3IDM0Ljk3NzNDMjYuNDc3OCAzNC45NzczIDI3LjUzNDMgMzQuNzk1NSAyOC43MDMzIDM0LjQzMThDMjkuNTEyNSAzNC4xNTkxIDMwLjA3NDUgMzMuOTMxOCAzMC4zODkyIDMzLjc1TDMzLjYyNjIgNDAuMDIyN1oiIGZpbGw9IiMzNzM3NDEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF84MTkxXzE5NzY4MSI+CjxyZWN0IHdpZHRoPSIxNDMiIGhlaWdodD0iNTIiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" />
+
+                <div class="border-block" id="btn-hide"><i class="arrow left" id="btn-hidei"></i></div>
+	        </div>
+
+            
+			<hr class="line" width="99%" color="#E2F1FF" size="1">
+           	<div id="calendar" class="calendar-container">
+        <div id="calendar_header" class="calendar-header">
+        	<h1 class="period-name"></h1>
+            <i class="icon-chevron-left"></i>
+            <i class="icon-chevron-right"></i>
+        </div>
+        <div id="calendar_weekdays" class="calendar-weekdays"></div>
+        <div id="calendar_content" class="calendar-content"></div>
+    </div>
+    		<hr class="line hr" width="99%" color="#E2F1FF" size="1">
+            
+	     	<div class="submenu" id="submenu-shedule">
+	        <div class="block single" id="shedule">
+           		<img class="icon single" id="icon-shedule" src="" />
+	            <p class="block-name" id="block-name-shedule">Расписание</p>
+	        </div>
+            </div>
+            <div class="submenu" id="submenu-control">
+	        <div class="block" id="control">
+            	<img class="icon" id="icon-control" src="" />
+	            <p class="block-name" id="block-name-control">Контроль записей</p>
+                <i class="down"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-control">
+            	<div class="subpoint" id="1subpoint-control">
+                	<p class="subpoint-name" id="1subpoint-name-control">Требуют подтверждения (0)</p>
+                </div>
+                <div class="subpoint" id="2subpoint-control">
+                	<p class="subpoint-name" id="2subpoint-name-control">Клиент пришёл (0)</p>
+                </div>
+                <div class="subpoint" id="3subpoint-control">
+                	<p class="subpoint-name" id="3subpoint-name-control">Неоплаченные (0)</p>
+                </div>
+                <div class="subpoint" id="4subpoint-control">
+                	<p class="subpoint-name" id="4subpoint-name-control">Требуют переноса (0)</p>
+                </div>
+                <div class="subpoint" id="5subpoint-control">
+                	<p class="subpoint-name" id="5subpoint-name-control">Отменённые (0)</p>
+                </div>
+                <div class="subpoint" id="6subpoint-control">
+                	<p class="subpoint-name" id="6subpoint-name-control">Направления (0)</p>
+                </div>
+              </div>
+            </div>
+            <div class="submenu" id="submenu-tasks">
+	        <div class="block single" id="tasks">
+            	<img class="icon single" id="icon-tasks" src="" />
+	            <p class="block-name" id="block-name-tasks">Задачи</p>
+	        </div>
+            </div>
+            <div class="submenu" id="submenu-clients">
+	        <div class="block single" id="clients">
+            	<img class="icon single" id="icon-clients" src="" />
+	            <p class="block-name" id="block-name-clients">Клиенты</p>
+	        </div>
+            </div>
+            <div class="submenu" id="submenu-price-list">
+	        <div class="block" id="price-list">
+            	<img class="icon" id="icon-price-list"
+            	src="" />
+	            <p class="block-name" id="block-name-price-list">Прайс-лист</p>
+                <i class="down" id="down-price-list"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-price-list">
+            	<div class="subpoint" id="1subpoint-price-list">
+                	<p class="subpoint-name" id="1subpoint-name-price-list">Услуги</p>
+                </div>
+                <div class="subpoint" id="2subpoint-price-list">
+                	<p class="subpoint-name" id="2subpoint-name-price-list">Курсы услуг</p>
+                </div>
+                <div class="subpoint" id="3subpoint-price-list">
+                	<p class="subpoint-name" id="3subpoint-name-price-list">Товары</p>
+                </div>
+                <div class="subpoint" id="4subpoint-price-list">
+                	<p class="subpoint-name" id="4subpoint-name-price-list">Сертификаты</p>
+                </div>
+                <div class="subpoint" id="5subpoint-price-list">
+                	<p class="subpoint-name" id="5subpoint-name-price-list">Журнал продаж</p>
+                </div>
+            </div>
+            </div>
+            
+            <div class="submenu" id="submenu-finance">
+	        <div class="block" id="finance">
+            	<img class="icon" id="icon-finance" src="" />
+	            <p class="block-name" id="block-name-finance">Финансы</p>
+                <i class="down"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-finance">
+            	<div class="subpoint" id="1subpoint-finance">
+                	<p class="subpoint-name" id="1subpoint-name-finance">Банк</p>
+                </div>
+                <div class="subpoint" id="2subpoint-finance">
+                	<p class="subpoint-name" id="2subpoint-name-finance">Операции по кассе</p>
+                </div>
+                <div class="subpoint" id="3subpoint-finance">
+                	<p class="subpoint-name" id="3subpoint-name-finance">Кассовые смены</p>
+                </div>
+                <div class="subpoint" id="4subpoint-finance">
+                	<p class="subpoint-name" id="4subpoint-name-finance">Сертификаты</p>
+                </div>
+            </div>
+            </div>
+            <div class="submenu" id="submenu-salary">
+	        <div class="block" id="salary">
+            	<img class="icon" id="icon-salary" src="" />
+	            <p class="block-name">Зарплата</p>
+                <i class="down"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-salary">
+            	<div class="subpoint" id="subpoint1-salary">
+                	<p class="subpoint-name">Условия начисления</p>
+                </div>
+                <div class="subpoint" id="subpoint2-salary">
+                	<p class="subpoint-name">KPI по зарплате</p>
+                </div>
+                <div class="subpoint" id="subpoint3-salary">
+                	<p class="subpoint-name">Алгоритм расчёта</p>
+                </div>
+                <div class="subpoint" id="subpoint4-salary">
+                	<p class="subpoint-name">Разовые начисления</p>
+                </div>
+                <div class="subpoint" id="subpoint5-salary">
+                	<p class="subpoint-name">Расчёт зарплаты</p>
+                </div>
+                <div class="subpoint" id="subpoint5-salary">
+                	<p class="subpoint-name">Отчёты</p>
+                </div>
+            </div>
+            </div>
+            <div class="submenu" id="submenu-staff">
+	        <div class="block" id="staff">
+            	<img class="icon" id="icon-staff" src="" />
+	            <p class="block-name" id="block-name-staff">Кадры</p>
+                <i class="down"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-staff">
+            	<div class="subpoint" id="1subpoint-staff">
+                	<p class="subpoint-name" id="1subpoint-name-staff">Графики работы</p>
+                </div>
+                <div class="subpoint" id="2subpoint-staff">
+                	<p class="subpoint-name" id="2subpoint-name-staff">Сотрудники</p>
+                </div>
+            </div>
+            </div>
+            <div class="submenu" id="submenu-equipment">
+	        <div class="block" id="equipment">
+            	<img class="icon" id="icon-equipment" src="" />
+	            <p class="block-name" id="block-name-equipment">Оборудование</p>
+                <i class="down"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-equipment">
+            	<div class="subpoint" id="1subpoint-equipment">
+                	<p class="subpoint-name" id="1subpoint-name-equipment">Действующее</p>
+                </div>
+                <div class="subpoint" id="2subpoint-equipment">
+                	<p class="subpoint-name" id="2subpoint-name-equipment">Списанное</p>
+                </div>
+                <div class="subpoint" id="3subpoint-equipment">
+                	<p class="subpoint-name" id="3subpoint-name-equipment">Карты ТО</p>
+                </div>
+            </div>
+            </div>
+            <div class="submenu" id="submenu-warehouse">
+	        <div class="block" id="warehouse">
+            	<img class="icon" id="icon-warehouse" src="" />
+	            <p class="block-name" id="block-name-warehouse">Склад</p>
+                <i class="down" id="down-warehouse"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-warehouse">
+            	<div class="subpoint" id="1subpoint-warehouse">
+                	<p class="subpoint-name" id="1subpoint-name-warehouse">Потребность</p>
+                </div>
+                <div class="subpoint" id="2subpoint-warehouse">
+                	<p class="subpoint-name" id="2subpoint-name-warehouse">Поступления</p>
+                </div>
+                <div class="subpoint" id="3subpoint-warehouse">
+                	<p class="subpoint-name" id="3subpoint-name-warehouse">Списания</p>
+                </div>
+                <div class="subpoint" id="4subpoint-warehouse">
+                	<p class="subpoint-name" id="4subpoint-name-warehouse">Перемещения</p>
+                </div>
+                <div class="subpoint" id="5subpoint-warehouse">
+                	<p class="subpoint-name" id="5subpoint-name-warehouse">Остатки</p>
+                </div>
+                <div class="subpoint" id="6subpoint-warehouse">
+                	<p class="subpoint-name" id="6subpoint-name-warehouse">Инвентаризация</p>
+                </div>
+                <div class="subpoint" id="7subpoint-warehouse">
+                	<p class="subpoint-name" id="7subpoint-name-warehouse">Контроль</p>
+                </div>
+            </div>
+            </div>
+            
+            <div class="submenu" id="submenu-marketing">
+	        <div class="block" id="marketing">
+            	<img class="icon" id="icon-marketing" src="" />
+	            <p class="block-name" id="block-name-marketing">Маркетинг</p>
+                <i class="down"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-marketing">
+            	<div class="subpoint" id="1subpoint-marketing">
+                	<p class="subpoint-name" id="1subpoint-name-marketing">Начисление бонусов</p>
+                </div>
+                <div class="subpoint" id="2subpoint-marketing">
+                	<p class="subpoint-name" id="2subpoint-name-marketing">Проведение акции</p>
+                </div>
+                <div class="subpoint" id="3subpoint-marketing">
+                	<p class="subpoint-name" id="3subpoint-name-marketing">Настройка акции</p>
+                </div>
+            </div>
+            </div>
+            <div class="submenu" id="submenu-help">
+	        <div class="block" id="help">
+            	<img class="icon" id="icon-help" src="" />
+	            <p class="block-name" id="block-name-help">Помощь</p>
+                <i class="down"></i>
+	        </div>
+            <div class="common-subblock" id="common-subblock-help">
+            	<div class="subpoint" id="1subpoint-help">
+                	<p class="subpoint-name" id="1subpoint-name-help">Telegram</p>
+                </div>
+                <div class="subpoint" id="2subpoint-help">
+                	<p class="subpoint-name" id="2subpoint-name-help">Wats App</p>
+                </div>
+                <div class="subpoint" id="3subpoint-help">
+                	<p class="subpoint-name" id="3subpoint-name-help">Вк</p>
+                </div>
+                <div class="subpoint" id="4subpoint-help">
+                	<p class="subpoint-name" id="4subpoint-name-help">Инструкции</p>
+                </div>
+                <div class="subpoint" id="5subpoint-help">
+                	<p class="subpoint-name" id="5subpoint-name-help">Сообщить об ошибке</p>
+                </div>
+            </div>
+            </div>
+            <div class="submenu bottom-submenu" id="submenu-call">
+            	<div class="block single" id="call">
+            		<img class="icon" id="icon-call" src="" />
+	            	<p class="block-name" style="color: #079A6E">Позвонить</p>
+            	</div>
+            </div>
+            <div class="submenu" id="submenu-settings">
+	        <div class="block single" id="settings">
+            	<img class="icon" id="icon-settings" src="" />
+	            <p class="block-name" id="block-name-settings">Настройки</p>
+	        </div>
+            </div>
+            <div class="bottom-submenu" id="submenu-account">
+            	<div class="block single div-account" id="account">
+            		<img class="icon" id="icon-account" src="" />
+	            	<p class="block-name">Мой кабинет</p>
+            	</div>
+            </div>
+	    </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: #fff;
+  --fc-neutral-bg-color: hsla(0, 0%, 82%, 0.3);
+  --fc-neutral-text-color: rgba(55, 55, 65, 1);
+  --fc-border-color: #ddd;
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: rgba(1, 142, 215, 1);
+  --fc-button-border-color: rgba(1, 142, 215, 1);
+  --fc-button-hover-bg-color: rgba(1, 142, 215, 1);
+  --fc-button-hover-border-color: rgba(1, 142, 215, 1);
+  --fc-button-active-bg-color: rgba(1, 142, 215, 1);
+  --fc-button-active-border-color: rgba(1, 142, 215, 1);
+  --fc-event-bg-color: #3788d8;
+  --fc-event-border-color: #3788d8;
+  --fc-event-text-color: #fff;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+  --fc-non-business-color: hsla(0, 0%, 84%, 0.3);
+  --fc-bg-event-color: #8fdf82;
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color:  #fff;
+  --fc-now-indicator-color: red;
+
+  /* Дизайн токены */
+  --color-background: rgba(255, 255, 255, 1);
+  --color-foreground: rgba(0, 0, 0, 1);
+  --color-muted: rgba(245, 245, 245, 1);
+  --color-muted-foreground: #6b7280;
+  --color-popover: rgba(255, 255, 255, 1);
+  --color-popover-foreground: rgba(55, 65, 81, 1);
+  --color-border: #E7E7E7;
+  --color-input: rgba(230, 230, 230, 1);
+  --color-card: #F5FAFF;
+  --color-card-foreground: #373741;
+  --color-primary: #373741;
+  --color-primary-foreground: rgba(255, 255, 255, 1);
+  --color-secondary: #7F7E7F;
+  --color-secondary-foreground: rgba(17, 24, 39, 1);
+  --color-accent: #018ED7;
+  --color-accent-foreground: #FFFFFF;
+  --color-brand: #ffe681;
+  --color-destructive: rgba(255, 0, 0, 1);
+  --color-destructive-foreground: rgba(255, 255, 255, 1);
+  --color-ring: rgba(180, 180, 180, 1);
+  --radius: 0.5rem;
+}
+
+body {
+  margin: 0;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+}
+
+/* Сбросы стилей */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+/* Анимации */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* Классы для FullCalendar */
+.schedule-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: var(--fc-page-bg-color);
+  overflow: hidden;
+}
+
+.calendar-wrapper {
+  overflow-x: auto;
+  min-width: 1200px;
+}
+
+.fc-theme-standard td {
+  min-width: 100px; /* Минимальная ширина ячеек */
+}
+
+.fc {
+  border: none;
+  font-size: var(--fc-small-font-size);
+}
+
+.fc-toolbar.fc-header-toolbar {
+  margin-bottom: 0;
+}
+
+.fc-view-harness {
+  border: none;
+}
+
+.fc-col-header-cell {
+  border: none;
+  background-color: var(--fc-neutral-bg-color);
+  color: var(--fc-neutral-text-color);
+}
+
+.fc-scrollgrid {
+  border: none;
+}
+
+/* Фиксация заголовков и колонок */
+.fc .fc-timeline-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+/* Фиксация колонки ресурсов */
+.fc .fc-resource-timeline {
+  position: sticky;
+  left: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* Горизонтальный скролл для основной сетки */
+.fc .fc-scrollgrid-section-body {
+  overflow-x: auto !important;
+}
+
+/* Фиксация временной шкалы */
+.fc .fc-timegrid-axis {
+  position: sticky !important;
+  left: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* Фиксация заголовков ресурсов */
+.fc .fc-col-header-cell {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+/* Ширина колонок */
+.fc .fc-timegrid-slots td {
+  min-width: 200px !important;
+}
+
+/* Разделение ресурсов в сетке */
+.fc .fc-resource-timeline .fc-datagrid-cell,
+.fc .fc-resource-timegrid .fc-timegrid-col {
+  border-right: 1px solid var(--color-border) !important;
+}
+
+/* Подсветка активной колонки при наведении */
+.fc .fc-timegrid-col:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Стили для временных меток */
+.fc-sticky-time {
+  padding: 3px 6px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Улучшенные стили для индикатора текущего времени */
+.fc .fc-timegrid-now-indicator-container {
+  overflow: visible;
+  z-index: 50;
+}
+
+.fc .fc-timegrid-now-indicator-line {
+  z-index: 50;
+  overflow: visible !important;
+}
+
+.fc .fc-timegrid-now-indicator-arrow {
+  position: relative;
+  border: none !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: 50;
+} 

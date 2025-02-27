@@ -1,0 +1,141 @@
+/* ======================================================
+   СТИЛИ ДЛЯ REACT КОМПОНЕНТОВ КАЛЕНДАРЯ
+   ====================================================== */
+
+/* Стили для индикатора текущего времени */
+.time-indicator {
+  height: 2px;
+  background-color: #373741;
+  position: relative;
+  pointer-events: none !important;
+}
+
+.time-label {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  background-color: #373741;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px 3px;
+  border-radius: 4px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+  pointer-events: none !important;
+}
+
+.time-axis-label {
+  background-color: #F9D95D;
+  color: #373741;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px 3px;
+  border-radius: 360px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  pointer-events: none !important;
+}
+
+/* Индикатор для выбранного слота */
+.slot-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f9d95d;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.selectable-slot:hover .slot-indicator,
+.selected-slot .slot-indicator {
+  opacity: 1;
+}
+
+/* Стили для хинта временного слота */
+.slot-tooltip {
+  position: absolute;
+  background-color: rgba(55, 55, 65, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+  transform: translate(-50%, -100%);
+  margin-top: -8px;
+}
+
+.slot-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  margin-left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(55, 55, 65, 0.9);
+}
+
+/* Стили для поповера событий */
+.event-popover-container {
+  z-index: 1000 !important;
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  max-width: 320px;
+  animation: fade-in 0.2s ease;
+  border: 1px solid #e7e7e7;
+  overflow: hidden;
+}
+
+.event-popover-content {
+  opacity: 0;
+  animation: fade-in 0.3s ease forwards;
+}
+
+/* Анимации */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #F9D95D;
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Обновленные стили для выбранных слотов */
+.selected-slot {
+  background-color: rgba(249, 217, 93, 0.2) !important;
+  border: 2px solid #F9D95D !important;
+  border-radius: 4px;
+} 

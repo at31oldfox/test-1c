@@ -1,0 +1,7 @@
+.sortButton {
+  transition: color 0.15s;
+}
+
+.sortButton:hover {
+  color: #1f2937; /* gray-900 */
+}

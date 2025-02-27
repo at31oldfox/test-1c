@@ -1,68 +1,161 @@
+@import './styles/base.css';
+@import './styles/components.css';
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: #fff;
+  --fc-neutral-bg-color: hsla(0, 0%, 82%, 0.3);
+  --fc-neutral-text-color: rgba(55, 55, 65, 1);
+  --fc-border-color: #ddd;
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: rgba(1, 142, 215, 1);
+  --fc-button-border-color: rgba(1, 142, 215, 1);
+  --fc-button-hover-bg-color: rgba(1, 142, 215, 1);
+  --fc-button-hover-border-color: rgba(1, 142, 215, 1);
+  --fc-button-active-bg-color: rgba(1, 142, 215, 1);
+  --fc-button-active-border-color: rgba(1, 142, 215, 1);
+  --fc-event-bg-color: #3788d8;
+  --fc-event-border-color: #3788d8;
+  --fc-event-text-color: #fff;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+  --fc-non-business-color: hsla(0, 0%, 84%, 0.3);
+  --fc-bg-event-color: #8fdf82;
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color:  #fff;
+  --fc-now-indicator-color: red;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@theme {
+  --color-background: rgba(255, 255, 255, 1);
+  --color-foreground: rgba(0, 0, 0, 1);
+  --color-muted: rgba(245, 245, 245, 1);
+  --color-muted-foreground: #6b7280;
+  --color-popover: rgba(255, 255, 255, 1);
+  --color-popover-foreground: rgba(55, 65, 81, 1);
+  --color-border: #E7E7E7;
+  --color-input: rgba(230, 230, 230, 1);
+  --color-card: #F5FAFF;
+  --color-card-foreground: #373741;
+  --color-primary: #373741;
+  --color-primary-foreground: rgba(255, 255, 255, 1);
+  --color-secondary: #7F7E7F;
+  --color-secondary-foreground: rgba(17, 24, 39, 1);
+  --color-accent: #018ED7;
+  --color-accent-foreground: #FFFFFF;
+  --color-brand: #ffe681;
+  --color-destructive: rgba(255, 0, 0, 1);
+  --color-destructive-foreground: rgba(255, 255, 255, 1);
+  --color-ring: rgba(180, 180, 180, 1);
+  --radius: 0.5rem;
 }
 
 body {
+  color: var(--color-primary);
+}
+
+.schedule-container {
+  width: 100%;
+  padding: 0;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--fc-page-bg-color);
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.calendar-wrapper {
+  overflow-x: auto;
+  min-width: 1200px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.fc-theme-standard td {
+  min-width: 100px; /* Минимальная ширина ячеек */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.fc {
+  border: none;
+  font-size: var(--fc-small-font-size);
+}
+
+.fc-toolbar.fc-header-toolbar {
+  margin-bottom: 0;
+}
+
+.fc-view-harness {
+  border: none;
+}
+
+.fc-col-header-cell {
+  border: none;
+  background-color: var(--fc-neutral-bg-color);
+  color: var(--fc-neutral-text-color);
+}
+
+.fc-scrollgrid {
+  border: none;
+}
+
+/* Фиксация заголовков и колонок */
+.fc .fc-timeline-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+/* Фиксация колонки ресурсов */
+.fc .fc-resource-timeline {
+  position: sticky;
+  left: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* Горизонтальный скролл для основной сетки */
+.fc .fc-scrollgrid-section-body {
+  overflow-x: auto !important;
+}
+
+/* Фиксация временной шкалы */
+.fc .fc-timegrid-axis {
+  position: sticky !important;
+  left: 0;
+  z-index: 100;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* Фиксация заголовков ресурсов */
+.fc .fc-col-header-cell {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+/* Ширина колонок */
+.fc .fc-timegrid-slots td {
+  min-width: 200px !important;
+}
+
+/* Стили для временных меток */
+.fc-sticky-time {
+  padding: 3px 6px;
+  background: #f8f9fa;
+  border-radius: 4px;
 }

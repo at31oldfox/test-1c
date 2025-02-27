@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  padding: 1rem;
+}
+
+.checkboxContainer {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkboxLabel {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #373741;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.applyButton {
+  background-color: #ffe681;
+  color: #373741;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: background-color 0.15s;
+}
+
+.applyButton:hover {
+  background-color: rgba(255, 230, 129, 0.8);
+}
+
+.applyButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffe681;
+}

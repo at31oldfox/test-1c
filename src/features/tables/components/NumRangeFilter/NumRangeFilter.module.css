@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  min-height: auto;
+}
+
+.headerRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.headerLabelRight {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  flex-grow: 1;
+  padding-left: 1.25rem;
+}
+
+.inputRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.separator {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.inputContainer {
+  width: 155px;
+  height: 34px;
+  flex: 1;
+}
+
+.slider {
+  width: 100%;
+}
+
+.applyButton {
+  background-color: #ffe681;
+  color: #373741;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: background-color 0.15s;
+}
+
+.applyButton:hover {
+  background-color: rgba(255, 230, 129, 0.8);
+}
+
+.applyButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffe681;
+}

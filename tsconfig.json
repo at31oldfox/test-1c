@@ -1,4 +1,4 @@
 {
-  "extends": "./tsconfig.app.json",
-  "include": ["src", "orval.config.ts", "vite-env.d.ts", "vite.config.ts"]
-}
+    "extends": "./tsconfig.app.json",
+    "include": ["src", "orval.config.ts", "vite-env.d.ts", "vite.config.ts"]
+  }

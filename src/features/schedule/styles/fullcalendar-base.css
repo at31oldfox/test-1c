@@ -1,0 +1,71 @@
+/* ======================================================
+   БАЗОВЫЕ СТИЛИ ДЛЯ FULLCALENDAR 
+   ====================================================== */
+
+/* Базовые настройки шрифтов */
+.fc {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Сброс стилей для более чистой кастомизации */
+.fc .fc-toolbar,
+.fc .fc-view-harness,
+.fc .fc-scrollgrid,
+.fc .fc-timegrid-body,
+.fc .fc-timegrid-slots,
+.fc .fc-daygrid-body {
+  background-color: transparent;
+}
+
+/* Удаление нежелательных границ и теней */
+.fc .fc-toolbar-title,
+.fc .fc-toolbar-chunk,
+.fc .fc-toolbar button {
+  border: none;
+  box-shadow: none;
+}
+
+/* Стили для кнопок навигации */
+.fc .fc-button {
+  transition: background-color 0.2s ease;
+}
+
+/* Улучшение отображения заголовков и ячеек */
+.fc .fc-col-header-cell,
+.fc .fc-timegrid-slot-label,
+.fc .fc-resource-timeline-divider {
+  font-weight: normal;
+}
+
+/* Стили для лучшей читаемости времени */
+.fc .fc-timegrid-slot-label-cushion {
+  font-weight: 500;
+}
+
+/* Настройки для правильного позиционирования элементов */
+.fc .fc-timegrid-container {
+  overflow: visible !important;
+}
+
+/* Ensure the time indicator doesn't get clipped */
+.fc .fc-timegrid-now-indicator-container {
+  overflow: visible !important;
+}
+
+/* Fix positioning of time axis labels */
+.fc .fc-timegrid-axis-frame {
+  position: relative;
+  justify-content: flex-end;
+}
+
+/* Add smooth transitions to all interactive elements */
+.fc .fc-event,
+.fc .fc-button,
+.fc .fc-daygrid-day,
+.fc .fc-timegrid-slot-lane {
+  transition-property: background-color, border-color, box-shadow, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+} 

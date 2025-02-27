@@ -1,0 +1,371 @@
+/* Импорт базовых стилей и компонентов */
+@import url('./styles/fullcalendar-base.css');
+@import url('./styles/components.css');
+
+/* ======================================================
+   ОСНОВНЫЕ СТИЛИ СЕТКИ И КОНТЕЙНЕРОВ
+   ====================================================== */
+
+.fc-scrollgrid {
+  padding: 24px 20px;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: none !important;
+}
+
+.fc-toolbar {
+  border: none !important;
+}
+
+/* Убираем слияние ячеек в одну линию */
+.fc-timegrid-slots table {
+  border-collapse: separate !important;
+}
+
+/* ======================================================
+   ВРЕМЕННЫЕ МЕТКИ И СЛОТЫ
+   ====================================================== */
+
+.fc-timegrid-slot.fc-timegrid-slot-label.fc-scrollgrid-shrink {
+  border: 1px solid transparent !important;
+}
+
+.fc-slot-label {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.fc-slot-hour-col {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: -3px;
+}
+
+.fc-slot-minute-col {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 15px;
+  color: #A3A3A3;
+  width: 1.5rem;
+}
+
+.fc-timegrid-slot.fc-timegrid-slot-lane {
+  border-bottom: 1px solid #E6E6E6 !important;
+  box-sizing: border-box;
+  position: relative;
+  transition: background-color 0.2s ease !important;
+}
+
+/* Добавляем стили только для слотов в колонках ресурсов */
+.fc-timegrid-col.fc-day .fc-timegrid-slot-lane {
+  position: relative;
+  overflow: visible;
+}
+
+/* Выделение только ячейки внутри колонки ресурса при наведении */
+.fc-timegrid-col.fc-day .fc-timegrid-slot-lane:hover {
+  background-color: rgba(226, 241, 255, 0.8) !important;
+  z-index: 6 !important;
+  position: relative; /* Для корректного отображения z-index */
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(70, 104, 199, 0.3);
+}
+
+/* Стили для ячеек в текущем дне */
+.fc-timegrid-col.fc-day-today .fc-timegrid-slot-lane:hover {
+  background-color: rgba(249, 217, 93, 0.1) !important;
+  box-shadow: inset 0 0 0 1px rgba(249, 217, 93, 0.5);
+}
+
+/* ======================================================
+   РЕСУРСЫ И КОЛОНКИ
+   ====================================================== */
+
+thead.rowgroup {
+  border-bottom: 1px solid #C0C0C0 !important;
+}
+
+/* Стили для разделения колонок ресурсов */
+.fc-col-header-cell {
+  border-right: 1px solid #E7E7E7 !important;
+}
+
+.fc-timegrid-col {
+  border-right: 1px solid #E7E7E7 !important;
+  background-color: #FFFFFF;
+}
+
+/* Выделение активной колонки при наведении */
+.fc-timegrid-col:hover {
+  background-color: #F5F8FA;
+}
+
+/* Разделители между ресурсами */
+.fc-timegrid-col-frame {
+  border-right: 1px solid #E7E7E7 !important;
+}
+
+/* Более заметные заголовки ресурсов */
+.fc-col-header-cell-cushion {
+  font-weight: bold;
+  padding: 8px !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+/* Улучшение стилей сетки для ресурсов */
+.fc-resource-timeline, 
+.fc-resource-timegrid {
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+/* ======================================================
+   СОБЫТИЯ И КОЛОНКИ С СОБЫТИЯМИ
+   ====================================================== */
+
+/* Контейнер для колонок событий должен быть выше индикатора */
+.fc-timegrid-col-events {
+  z-index: 9 !important;
+  pointer-events: auto !important;
+  position: relative !important;
+}
+
+/* Улучшение отображения событий внутри колонок */
+.fc-timegrid-event-harness {
+  margin: 0 2px !important;
+  /* Событие должно быть выше индикатора времени */
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+/* Стили для событий, чтобы они были видны в своих колонках */
+.fc-timegrid-event {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  margin: 0 2px !important;
+  transition: all 0.2s ease !important;
+}
+
+.fc-timegrid-event:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  z-index: 11 !important;
+}
+
+.fc-event-main {
+  transition: all 0.2s ease !important;
+}
+
+/* Полностью удаляем дефолтные стили событий */
+.fc-event-no-default-styles.fc-event {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Скрываем дефолтное содержимое */
+.fc-event-no-default-styles .fc-event-main-frame,
+.fc-event-no-default-styles .fc-event-time,
+.fc-event-no-default-styles .fc-event-title-container {
+  display: none !important;
+}
+
+/* Правильное отображение нашего кастомного контента */
+.fc-event-no-default-styles .fc-event-main {
+  padding: 0 !important;
+  height: 100% !important;
+}
+
+/* ======================================================
+   ИНДИКАТОР ТЕКУЩЕГО ВРЕМЕНИ
+   ====================================================== */
+
+/* Контейнер индикатора времени с правильным z-index */
+.fc-timegrid-now-indicator-container {
+  z-index: 4 !important; /* Меньше, чем у событий, но больше чем у фона */
+  pointer-events: none !important; /* Пропускает клики через себя */
+}
+
+/* Стили для React компонентов индикатора времени и временных меток */
+.time-indicator {
+  height: 2px;
+  background-color: #373741;
+  position: relative;
+  pointer-events: none !important;
+}
+
+.time-label {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  background-color: #373741;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px 3px;
+  border-radius: 4px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+  pointer-events: none !important;
+}
+
+.time-axis-label {
+  background-color: #F9D95D;
+  color: #373741;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px 3px;
+  border-radius: 360px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  pointer-events: none !important;
+}
+
+/* Контейнер для axis индикатора */
+.fc-timegrid-now-indicator-arrow {
+  overflow: visible !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+}
+
+/* Удаляем границы у now-indicator */
+.fc-timegrid-now-indicator-no-default-styles {
+  border-width: 0px !important;
+  pointer-events: none !important;
+}
+
+/* ======================================================
+   ВЫБИРАЕМЫЕ ВРЕМЕННЫЕ СЛОТЫ
+   ====================================================== */
+
+.selectable-slot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+.selected-slot {
+  background-color: rgba(249, 217, 93, 0.2) !important;
+  border: 2px solid #F9D95D !important;
+  border-radius: 4px;
+}
+
+/* ======================================================
+   ПОПОВЕРЫ И ТУЛТИПЫ
+   ====================================================== */
+
+/* Стили для поповера событий */
+.event-popover-container {
+  z-index: 1000 !important;
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  max-width: 320px;
+  animation: fade-in 0.2s ease;
+  border: 1px solid #e7e7e7;
+  overflow: hidden;
+}
+
+/* Анимация для появления поповера */
+.event-popover-content {
+  opacity: 0;
+  animation: fade-in 0.3s ease forwards;
+}
+
+/* Стили для хинта временного слота */
+.slot-tooltip {
+  position: absolute;
+  background-color: rgba(55, 55, 65, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+  transform: translate(-50%, -100%);
+  margin-top: -8px;
+}
+
+.slot-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  margin-left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(55, 55, 65, 0.9);
+}
+
+/* ======================================================
+   СТИЛИ ДЛЯ УЛУЧШЕНИЯ ОТОБРАЖЕНИЯ РЕСУРСОВ И СОБЫТИЙ
+   ====================================================== */
+
+.fc-resource-timeline .fc-resource-group,
+.fc-resource-timegrid .fc-resource-group {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+
+/* Улучшение вида ячеек ресурсов */
+.fc-resource-timeline .fc-datagrid-cell-cushion,
+.fc-resource-timegrid .fc-datagrid-cell-cushion {
+  padding: 8px;
+}
+
+/* ======================================================
+   АНИМАЦИИ
+   ====================================================== */
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #F9D95D;
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(255, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

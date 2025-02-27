@@ -1,0 +1,41 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.headerTitle {
+  cursor: pointer;
+}
+
+.headerTitle.filterable:hover {
+  text-decoration: underline;
+}
+
+.filterButton {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.filterIcon {
+  height: 1rem;
+  width: 1rem;
+  color: var(--muted-foreground);
+  transition: color 0.15s;
+}
+
+.filterIcon:hover {
+  color: var(--muted-foreground);
+}
+
+.popoverContent {
+  border-color: #e6e6e6;
+  box-shadow: none;
+}
+
+.whiteBackground {
+  background-color: white;
+}

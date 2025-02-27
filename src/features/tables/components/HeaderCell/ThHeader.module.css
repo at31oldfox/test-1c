@@ -1,0 +1,18 @@
+.headerCell {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 54px;
+  background-color: #f8fcff;
+  font-size: 14px;
+  font-weight: normal;
+  color: #7f7e7f;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

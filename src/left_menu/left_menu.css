@@ -1,0 +1,560 @@
+.body {
+    	owerflow: hidden;  
+      }
+    
+    ::-webkit-scrollbar {
+		visibility: hidden;
+		width: 0px;
+	}        
+	
+	.common-block {
+	    width: 276px;
+        display: flex;       
+        height: auto;
+
+        background-color: #F5FAFF;
+        border: solid 1px #E2F1FF;         
+		height: 920px;
+
+    flex-direction: column;   
+
+	}
+	
+	.block {
+	    padding: 13px 6px;
+        border-radius: 8px;
+	    height: 10px;
+	    display: flex;
+	    align-items: center; 
+	    cursor: pointer;
+	}      
+    
+    .div-account {
+
+        border-radius: 0px;
+        border: solid 1px #ECEDEF;
+
+        background-color: #fff;
+
+	}  
+    
+    .bottom-submenu {
+		margin-top: auto;
+    	padding: 0px 20px 20px 20px;  
+    }
+    
+    .div-account:hover {
+		background-color: #fff;
+	} 
+    
+    .icon-logo {
+    	margin-top: 14px;
+        padding-left: 4px;    
+        cursor: pointer;
+    }
+    
+    
+	.block-curr {
+	    background-color: #fff;
+        border-radius: 8px 8px 0px 0px;
+	} 
+    
+    .block-single-curr {
+	} 
+    
+    .block-name {
+        font-size: 15px;
+        display: block;
+        font-family: Onest Medium;
+        color: #373741;
+        font-size: 15px;
+	}
+	.block-name-curr {
+       color: #000000;
+	}
+	
+    .block-curr .block-name{
+	    color: #373741;
+	} 
+    
+    .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    display: block;
+    border: solid #A3A3A3;
+  	border-width: 0 2px 2px 0;
+    border-radius: 1px;
+  	display: inline-block;
+  	padding: 3px;
+  	text-align: right;
+  	margin-bottom: auto;
+  	margin-left: auto;
+    margin-top: 3px;
+  	margin-right: 8px;
+}
+
+    .block-curr .up{
+	    transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        display: block;
+        border: solid #373741;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        text-align: right;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-top: 3px;
+        margin-right: 8px;
+	} 
+    
+    .block-single-curr .block-name{
+	    color: #000000;
+	} 
+    
+	.submenu {
+        border-radius: 10px;
+        margin: -5px 20px 5px 22px;
+        padding: 0px;
+        vertical-align: top;
+    }
+    
+    .common-subblock {	
+    	padding-top: 0px;
+        height: 0px;
+        background-color: #fff;  
+    }
+    
+    .common-subblock-curr {
+    
+    	border-top: solid 0.5px #F3F2F2;
+        border-left: solid 0.5px #F3F2F2;
+        border-right: solid 0.5px #F3F2F2;
+        border-bottom: solid 1px #F3F2F2;
+        border-radius: 0px 0px 10px 10px;
+        background-color: #fff;
+    
+    }
+    
+    .subpoint {
+
+        display: none;
+		margin: 0px 17px 10px 17px;
+    }
+    
+    .subpoint-curr {
+    	margin: 0px 17px 10px 17px;
+        display: block;
+    }
+    
+    .subpoint-name {
+    	font-family: Onest Regular;
+        color: #7F7E7F;
+        font-size: 14px;
+        margin: 0px;
+		padding-top: 10px; 
+		cursor: pointer;
+      }
+      
+      
+    .subpoint-name:hover {
+        color: #373741;
+     }
+    
+    .submenu-curr {
+        border-radius: 10px;
+        border-color: #000000;
+        height: 200px;
+        margin: -5px 12px 5px 12px;
+        background-color: #f9f9f9;
+    }
+    
+	.block:hover {
+    	background-color: #fff;
+	} 
+    
+    .page-curr:hover {
+    	background-color: #FFE681;
+    }
+
+	.block:hover .block-name{
+	}
+    
+    .left {
+    	transform: rotate(135deg);
+    	-webkit-transform: rotate(135deg);display: block;
+    	border: solid #A3A3A3;
+  		border-width: 0 2px 2px 0;
+        border-radius: 5px 1px 1px 1px;
+        margin: 4px 4px 4px 8px;
+        width: 7px;
+        height: 7px;
+        margin-top: 7px;
+        
+    }
+    
+    .right {
+    	transform: rotate(135deg);
+    	-webkit-transform: rotate(135deg);display: block;
+    	border: solid #A3A3A3;
+  		border-width: 0 2px 2px 0;
+        margin: 4px 4px 4px 8px;
+        width: 8px;
+        height: 8px;
+    }
+    
+    .border-block {
+    	display: inline-block;
+  		padding: 3px;
+  		text-align: center;
+  		margin-bottom: 0px;
+  		margin-left: auto;
+        margin-top: 13px;
+  		margin-right: 0px;
+        height: 22px;
+        border: solid 1px #E7E7E7;
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .border-block:hover .left {
+    	border: solid #000000;
+        border-width: 0 2px 2px 0;
+    }
+	
+	.logo {
+        margin: 29px 17px 35px 8px;
+        border-radius: 10px;
+	    height: 10px;
+	    display: flex;
+	    align-items: center;
+	}
+    
+    .icon-logo {
+    	width: 140px;
+
+    }
+    
+    .logo-name {
+    	height:1px;
+        font-family: sans-serif;
+    }
+    
+    .icon {
+    	margin-right: 15px;
+        margin-left: 5px;
+        }
+
+    
+    .block-name-hidden {
+	    font-family: sans-serif;
+        display: none;
+	}
+    
+
+
+
+i {
+  
+}
+
+.hr {
+	margin-bottom: 30px;
+}
+
+.block:hover .down{
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    display: block;
+    border: solid #373741;
+  	border-width: 0 2px 2px 0;
+  	display: inline-block;
+  	padding: 3px;
+  	text-align: right;
+  	margin-bottom: auto;
+  	margin-left: auto;
+  	margin-right: 8px;
+
+   	}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    display: block;
+    border: solid #A3A3A3;
+    border-radius: 1px;
+  	border-width: 0 2px 2px 0;
+  	display: inline-block;
+  	padding: 3px;
+  	text-align: right;
+  	margin-bottom: auto;
+  	margin-left: auto;
+  	margin-right: 8px;
+}
+
+
+.down:hover {
+   border: solid #373741; 
+   border-width: 0 2px 2px 0;
+}
+
+.up:hover {
+   border: solid #373741; 
+   border-width: 0 2px 2px 0;
+}
+
+.down-hidden {
+	display: none;
+}
+
+
+:root {
+            --calendar-width: 238px;
+            --header-text-color: #A3A3A3;
+            --days-background-color: #F5FAFF;
+            --days-hover-background-color: #FFE681;
+            --days-text-color: #373741;
+            --blank-text-color: #A3A3A3;
+            --blank-day-background-color: #F5FAFF;
+            --weekdays-background-color: #F5FAFF;
+            --weekdays-usual-text-color: black;
+            --day-active-background-color: #FFE681;
+            --filterDay-selected-bg-color: #F0E68C;
+            --today-text-color: #000000;
+            --today-background-color: #FFE681;
+            --body-background-color: transparent;
+            --arrow-padding-top: 30%;
+            --days-border-radius: 100%;
+            --days-text-size: 11px;
+        }
+
+        body{
+            background-color: var(--body-background-color);
+            margin: 0px;
+        }
+
+        .blank,
+        .day {
+            position: relative;
+            width: calc(var(--calendar-width) / 9);
+            height: calc(var(--calendar-width) / 9);
+            line-height: calc(var(--calendar-width) / 9);
+            margin-left: 6px;
+            float: left;
+            overflow: hidden;
+            text-align: center;
+            font-size: var(--days-text-size);
+            user-select: none;
+            cursor: pointer;
+            border-radius: var(--days-border-radius);
+            font-family: Onest Medium;
+        }
+
+        .day {
+            background-color: var(--days-background-color);
+            color: var(--days-text-color);
+            transition: background-color .4s ease;
+        }
+        
+        .blank {
+            color: var(--blank-text-color);
+        }
+
+        .day:hover {
+            background-color: #FFF;
+        }
+
+        .day.selected {
+            background-color: var(--day-active-background-color);
+            color: var(--weekdays-usual-text-color);
+            font-family: Onest Medium;
+        }
+
+        .day.filteredDay {
+            background-color: var(--filterDay-selected-bg-color);
+        }
+
+        .day.selected.filteredDay {
+            background-color: var(--day-active-background-color);
+            color: var(--weekdays-usual-text-color);
+            font-weight: bold;
+        }
+
+
+        .today{
+            color: var(--today-text-color);
+            background-color: var(--today-background-color);
+            border-radius: var(--days-border-radius);
+        }
+
+        .weekname {
+            display:inline-block;
+            width: calc(var(--calendar-width) / 9);
+            margin-left: 6px;
+            height: calc(var(--calendar-width) / 9);
+            line-height: calc(var(--calendar-width) / 8);
+            vertical-align:top;
+            user-select: none;
+            background-color: var(--weekdays-background-color);
+            overflow: hidden;
+            text-align: center;
+            user-select: none;
+            font-size: 11px;
+            font-family: Onest Medium;
+        }
+
+        .holiday {
+      
+        }
+
+        .calendar-container{
+            margin-left: 21px;
+            margin-right: 0px;
+            width: var(--calendar-width);
+            font-family: 'Lato', sans-serif;
+            margin-bottom: 5px;
+        }
+
+        
+        .calendar-content, 
+        .calendar-weekdays, 
+        .calendar-header{
+            position: relative;
+            width: var(--calendar-width);
+            overflow: hidden;
+            float: left;
+            z-index: 10;
+        }
+        
+        .calendar-content{
+            -webkit-border-radius: 0px 0px 12px 12px;
+            -moz-border-radius: 0px 0px 12px 12px; 
+            border-radius: 0px 0px 12px 12px;
+        }
+        
+        .blank{
+            background-color: var(--blank-day-background-color);
+        }
+        .calendar-header, 
+        .today{
+            zoom: 1;
+            filter: alpha(opacity=70);
+            background-color: #F5FAFF;
+        }
+        
+
+        .calendar-header{
+            width: var(--calendar-width);
+            height: calc(var(--calendar-width) / 14);
+            padding: calc(var(--calendar-width) * 0.025) 0;
+            text-align: left;
+            background-color: #F5FAFF;
+            border-radius: 12px 12px 0px 0px;
+            font-family: sans-serif;
+        }
+
+        .icon-chevron-left,
+        .icon-chevron-right {
+            position: absolute;
+            top: 15px;
+            width: 10px;
+            height: 10px;
+            color: #A3A3A3;
+            float: left;
+            border-radius: 50%;
+            line-height: calc(var(--calendar-width) / 7);
+            cursor: pointer;
+        }
+
+        .icon-chevron-right {     
+            right: 0px;
+        }
+
+        .icon-chevron-left {
+            left: 163px;
+        }
+
+        .period-name{
+            font-size: 14px;
+            color: var(--header-text-color);
+ 			font-family: Onest Thin;
+            margin-left: 2px;
+            margin-top: 1px;
+        }
+        
+        .subpoint-page-curr .subpoint-name{
+        	color: #373741;
+            font-family: Onest Medium;
+        }
+
+        
+
+        .icon-chevron-right:hover, .icon-chevron-right:focus,
+        .icon-chevron-right:hover:before, .icon-chevron-right:hover:after,
+        .icon-chevron-right:focus:before, .icon-chevron-right:focus:after {
+            border: solid #373741;
+			border-width: 0 2px 2px 0;
+        }
+
+
+        
+        .icon-chevron-left {
+        	left: 192px;
+            top: 3px;
+            transform: rotate(135deg);
+    		-webkit-transform: rotate(135deg);display: block;
+    		border: solid #A3A3A3;
+  			border-width: 0 2px 2px 0;
+        	border-radius: 5px 1px 1px 1px;
+        	margin: 4px 4px 4px 8px;
+        	width: 7px;
+        	height: 7px;
+        	margin-top: 7px;
+        }
+        
+        .icon-chevron-right {
+        	left: 211px;
+            top: 3px;
+            transform: rotate(-45deg);
+    		-webkit-transform: rotate(-45deg);display: block;
+    		border: solid #A3A3A3;
+  			border-width: 0 2px 2px 0;
+        	border-radius: 5px 1px 1px 1px;
+        	margin: 4px 4px 4px 8px;
+        	width: 7px;
+        	height: 7px;
+        	margin-top: 7px;
+        }
+
+
+
+        .icon-chevron-left:hover, .icon-chevron-left:focus,
+        .icon-chevron-left:hover:before, .icon-chevron-left:hover:after,
+        .icon-chevron-left:focus:before, .icon-chevron-left:focus:after {
+        	border: solid #373741;
+			border-width: 0 2px 2px 0;
+        }
+
+.page-curr {
+	    background-color: #FFE681;
+	} 
+    
+.page-curr .block-name{
+	    color: #000000;
+	} 
+    
+.page-curr .down{
+	transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    display: block;
+    border: solid #000000;
+  	border-width: 0 2px 2px 0;
+  	display: inline-block;
+  	padding: 3px;
+  	text-align: right;
+  	margin-bottom: auto;
+  	margin-left: auto;
+  	margin-right: 8px;
+} 

@@ -1,0 +1,4506 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Service for namespace StandardODATA",
+        "version": "",
+        "description": "This service is located at [http://localhost/service-root/](http://localhost/service-root/)"
+    },
+    "servers": [
+        {
+            "url": "http://localhost/service-root"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Catalog_Контрагенты"
+        },
+        {
+            "name": "Catalog_Контрагенты_КонтактнаяИнформация"
+        },
+        {
+            "name": "Catalog_Контрагенты_БартерныеКлиенты"
+        },
+        {
+            "name": "Catalog_Номенклатура"
+        },
+        {
+            "name": "Catalog_Номенклатура_ИспользуемоеОборудование"
+        },
+        {
+            "name": "Catalog_Номенклатура_КонтрольКритическихОстатков"
+        }
+    ],
+    "paths": {
+        "/Catalog_Контрагенты": {
+            "get": {
+                "summary": "Get entities from Catalog_Контрагенты",
+                "tags": [
+                    "Catalog_Контрагенты"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Ref_Key desc",
+                                    "Predefined",
+                                    "Predefined desc",
+                                    "PredefinedDataName",
+                                    "PredefinedDataName desc",
+                                    "DataVersion",
+                                    "DataVersion desc",
+                                    "Description",
+                                    "Description desc",
+                                    "Code",
+                                    "Code desc",
+                                    "Parent_Key",
+                                    "Parent_Key desc",
+                                    "IsFolder",
+                                    "IsFolder desc",
+                                    "DeletionMark",
+                                    "DeletionMark desc",
+                                    "НаименованиеПолное",
+                                    "НаименованиеПолное desc",
+                                    "ИНН",
+                                    "ИНН desc",
+                                    "КПП",
+                                    "КПП desc",
+                                    "ЮридическоеФизическоеЛицо",
+                                    "ЮридическоеФизическоеЛицо desc",
+                                    "Комментарий",
+                                    "Комментарий desc",
+                                    "Банк",
+                                    "Банк desc",
+                                    "НомерСчета",
+                                    "НомерСчета desc",
+                                    "КоррСчет",
+                                    "КоррСчет desc",
+                                    "НаименованиеБанка",
+                                    "НаименованиеБанка desc",
+                                    "ПрименяетБартер",
+                                    "ПрименяетБартер desc",
+                                    "ДатаПоследнейПоставки",
+                                    "ДатаПоследнейПоставки desc",
+                                    "ДатаСоздания",
+                                    "ДатаСоздания desc",
+                                    "КонтактнаяИнформация",
+                                    "КонтактнаяИнформация desc",
+                                    "БартерныеКлиенты",
+                                    "БартерныеКлиенты desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Predefined",
+                                    "PredefinedDataName",
+                                    "DataVersion",
+                                    "Description",
+                                    "Code",
+                                    "Parent_Key",
+                                    "IsFolder",
+                                    "DeletionMark",
+                                    "НаименованиеПолное",
+                                    "ИНН",
+                                    "КПП",
+                                    "ЮридическоеФизическоеЛицо",
+                                    "Комментарий",
+                                    "Банк",
+                                    "НомерСчета",
+                                    "КоррСчет",
+                                    "НаименованиеБанка",
+                                    "ПрименяетБартер",
+                                    "ДатаПоследнейПоставки",
+                                    "ДатаСоздания",
+                                    "КонтактнаяИнформация",
+                                    "БартерныеКлиенты"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Parent"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Collection of Catalog_Контрагенты",
+                                    "type": "object",
+                                    "properties": {
+                                        "@count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to Catalog_Контрагенты",
+                "tags": [
+                    "Catalog_Контрагенты"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New entity",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Контрагенты({Ref_Key})": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from Catalog_Контрагенты by key",
+                "tags": [
+                    "Catalog_Контрагенты"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Predefined",
+                                    "PredefinedDataName",
+                                    "DataVersion",
+                                    "Description",
+                                    "Code",
+                                    "Parent_Key",
+                                    "IsFolder",
+                                    "DeletionMark",
+                                    "НаименованиеПолное",
+                                    "ИНН",
+                                    "КПП",
+                                    "ЮридическоеФизическоеЛицо",
+                                    "Комментарий",
+                                    "Банк",
+                                    "НомерСчета",
+                                    "КоррСчет",
+                                    "НаименованиеБанка",
+                                    "ПрименяетБартер",
+                                    "ДатаПоследнейПоставки",
+                                    "ДатаСоздания",
+                                    "КонтактнаяИнформация",
+                                    "БартерныеКлиенты"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Parent"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in Catalog_Контрагенты",
+                "tags": [
+                    "Catalog_Контрагенты"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New property values",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete entity from Catalog_Контрагенты",
+                "tags": [
+                    "Catalog_Контрагенты"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Контрагенты({Ref_Key})/Parent": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get related Parent",
+                "tags": [
+                    "Catalog_Контрагенты"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Predefined",
+                                    "PredefinedDataName",
+                                    "DataVersion",
+                                    "Description",
+                                    "Code",
+                                    "Parent_Key",
+                                    "IsFolder",
+                                    "DeletionMark",
+                                    "НаименованиеПолное",
+                                    "ИНН",
+                                    "КПП",
+                                    "ЮридическоеФизическоеЛицо",
+                                    "Комментарий",
+                                    "Банк",
+                                    "НомерСчета",
+                                    "КоррСчет",
+                                    "НаименованиеБанка",
+                                    "ПрименяетБартер",
+                                    "ДатаПоследнейПоставки",
+                                    "ДатаСоздания",
+                                    "КонтактнаяИнформация",
+                                    "БартерныеКлиенты"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Parent"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Контрагенты_КонтактнаяИнформация": {
+            "get": {
+                "summary": "Get entities from Catalog_Контрагенты_КонтактнаяИнформация",
+                "tags": [
+                    "Catalog_Контрагенты_КонтактнаяИнформация"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Ref_Key desc",
+                                    "LineNumber",
+                                    "LineNumber desc",
+                                    "Тип",
+                                    "Тип desc",
+                                    "Вид_Key",
+                                    "Вид_Key desc",
+                                    "Представление",
+                                    "Представление desc",
+                                    "ЗначенияПолей",
+                                    "ЗначенияПолей desc",
+                                    "Страна",
+                                    "Страна desc",
+                                    "Регион",
+                                    "Регион desc",
+                                    "Город",
+                                    "Город desc",
+                                    "АдресЭП",
+                                    "АдресЭП desc",
+                                    "ДоменноеИмяСервера",
+                                    "ДоменноеИмяСервера desc",
+                                    "НомерТелефона",
+                                    "НомерТелефона desc",
+                                    "НомерТелефонаБезКодов",
+                                    "НомерТелефонаБезКодов desc",
+                                    "ВидДляСписка_Key",
+                                    "ВидДляСписка_Key desc",
+                                    "Значение",
+                                    "Значение desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Тип",
+                                    "Вид_Key",
+                                    "Представление",
+                                    "ЗначенияПолей",
+                                    "Страна",
+                                    "Регион",
+                                    "Город",
+                                    "АдресЭП",
+                                    "ДоменноеИмяСервера",
+                                    "НомерТелефона",
+                                    "НомерТелефонаБезКодов",
+                                    "ВидДляСписка_Key",
+                                    "Значение"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Collection of Catalog_Контрагенты_КонтактнаяИнформация",
+                                    "type": "object",
+                                    "properties": {
+                                        "@count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to Catalog_Контрагенты_КонтактнаяИнформация",
+                "tags": [
+                    "Catalog_Контрагенты_КонтактнаяИнформация"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New entity",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Контрагенты_КонтактнаяИнформация(Ref_Key={Ref_Key},LineNumber={LineNumber})": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                {
+                    "name": "LineNumber",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: LineNumber",
+                    "schema": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from Catalog_Контрагенты_КонтактнаяИнформация by key",
+                "tags": [
+                    "Catalog_Контрагенты_КонтактнаяИнформация"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Тип",
+                                    "Вид_Key",
+                                    "Представление",
+                                    "ЗначенияПолей",
+                                    "Страна",
+                                    "Регион",
+                                    "Город",
+                                    "АдресЭП",
+                                    "ДоменноеИмяСервера",
+                                    "НомерТелефона",
+                                    "НомерТелефонаБезКодов",
+                                    "ВидДляСписка_Key",
+                                    "Значение"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in Catalog_Контрагенты_КонтактнаяИнформация",
+                "tags": [
+                    "Catalog_Контрагенты_КонтактнаяИнформация"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New property values",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete entity from Catalog_Контрагенты_КонтактнаяИнформация",
+                "tags": [
+                    "Catalog_Контрагенты_КонтактнаяИнформация"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Контрагенты_БартерныеКлиенты": {
+            "get": {
+                "summary": "Get entities from Catalog_Контрагенты_БартерныеКлиенты",
+                "tags": [
+                    "Catalog_Контрагенты_БартерныеКлиенты"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Ref_Key desc",
+                                    "LineNumber",
+                                    "LineNumber desc",
+                                    "Клиент_Key",
+                                    "Клиент_Key desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Клиент_Key"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Collection of Catalog_Контрагенты_БартерныеКлиенты",
+                                    "type": "object",
+                                    "properties": {
+                                        "@count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to Catalog_Контрагенты_БартерныеКлиенты",
+                "tags": [
+                    "Catalog_Контрагенты_БартерныеКлиенты"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New entity",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Контрагенты_БартерныеКлиенты(Ref_Key={Ref_Key},LineNumber={LineNumber})": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                {
+                    "name": "LineNumber",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: LineNumber",
+                    "schema": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from Catalog_Контрагенты_БартерныеКлиенты by key",
+                "tags": [
+                    "Catalog_Контрагенты_БартерныеКлиенты"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Клиент_Key"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in Catalog_Контрагенты_БартерныеКлиенты",
+                "tags": [
+                    "Catalog_Контрагенты_БартерныеКлиенты"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New property values",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete entity from Catalog_Контрагенты_БартерныеКлиенты",
+                "tags": [
+                    "Catalog_Контрагенты_БартерныеКлиенты"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Номенклатура": {
+            "get": {
+                "summary": "Get entities from Catalog_Номенклатура",
+                "tags": [
+                    "Catalog_Номенклатура"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Ref_Key desc",
+                                    "Predefined",
+                                    "Predefined desc",
+                                    "PredefinedDataName",
+                                    "PredefinedDataName desc",
+                                    "DataVersion",
+                                    "DataVersion desc",
+                                    "Description",
+                                    "Description desc",
+                                    "Code",
+                                    "Code desc",
+                                    "Parent_Key",
+                                    "Parent_Key desc",
+                                    "IsFolder",
+                                    "IsFolder desc",
+                                    "DeletionMark",
+                                    "DeletionMark desc",
+                                    "Артикул",
+                                    "Артикул desc",
+                                    "ВидНоменклатуры",
+                                    "ВидНоменклатуры desc",
+                                    "ВремяПроведения",
+                                    "ВремяПроведения desc",
+                                    "КоличествоСеансов",
+                                    "КоличествоСеансов desc",
+                                    "НаименованиеСокращенное",
+                                    "НаименованиеСокращенное desc",
+                                    "ОбязательныйФотоотчет",
+                                    "ОбязательныйФотоотчет desc",
+                                    "ОписаниеУслуги",
+                                    "ОписаниеУслуги desc",
+                                    "ШаблоныПечати_Base64Data",
+                                    "ШаблоныПечати_Base64Data desc",
+                                    "СтатьяДДС_Key",
+                                    "СтатьяДДС_Key desc",
+                                    "НазваниеПечати",
+                                    "НазваниеПечати desc",
+                                    "Медсестра",
+                                    "Медсестра desc",
+                                    "Стажёр",
+                                    "Стажёр desc",
+                                    "СрокОплатыКурсаВДнях",
+                                    "СрокОплатыКурсаВДнях desc",
+                                    "СпособРасхода",
+                                    "СпособРасхода desc",
+                                    "ЕдиницаИзмерения_Key",
+                                    "ЕдиницаИзмерения_Key desc",
+                                    "СрокДействияКурсаВДнях",
+                                    "СрокДействияКурсаВДнях desc",
+                                    "Медицинская",
+                                    "Медицинская desc",
+                                    "ИспользуетсяОборудование",
+                                    "ИспользуетсяОборудование desc",
+                                    "ДоступноДляОнлайнЗаписи",
+                                    "ДоступноДляОнлайнЗаписи desc",
+                                    "ДниДоКонцаСрокаГодности",
+                                    "ДниДоКонцаСрокаГодности desc",
+                                    "ЕстьКонтрольОстаков",
+                                    "ЕстьКонтрольОстаков desc",
+                                    "НаправлениеДеятельности_Key",
+                                    "НаправлениеДеятельности_Key desc",
+                                    "ИспользуемоеОборудование",
+                                    "ИспользуемоеОборудование desc",
+                                    "КонтрольКритическихОстатков",
+                                    "КонтрольКритическихОстатков desc",
+                                    "ШаблоныПечати_Type",
+                                    "ШаблоныПечати_Type desc",
+                                    "ШаблоныПечати",
+                                    "ШаблоныПечати desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Predefined",
+                                    "PredefinedDataName",
+                                    "DataVersion",
+                                    "Description",
+                                    "Code",
+                                    "Parent_Key",
+                                    "IsFolder",
+                                    "DeletionMark",
+                                    "Артикул",
+                                    "ВидНоменклатуры",
+                                    "ВремяПроведения",
+                                    "КоличествоСеансов",
+                                    "НаименованиеСокращенное",
+                                    "ОбязательныйФотоотчет",
+                                    "ОписаниеУслуги",
+                                    "ШаблоныПечати_Base64Data",
+                                    "СтатьяДДС_Key",
+                                    "НазваниеПечати",
+                                    "Медсестра",
+                                    "Стажёр",
+                                    "СрокОплатыКурсаВДнях",
+                                    "СпособРасхода",
+                                    "ЕдиницаИзмерения_Key",
+                                    "СрокДействияКурсаВДнях",
+                                    "Медицинская",
+                                    "ИспользуетсяОборудование",
+                                    "ДоступноДляОнлайнЗаписи",
+                                    "ДниДоКонцаСрокаГодности",
+                                    "ЕстьКонтрольОстаков",
+                                    "НаправлениеДеятельности_Key",
+                                    "ИспользуемоеОборудование",
+                                    "КонтрольКритическихОстатков",
+                                    "ШаблоныПечати_Type",
+                                    "ШаблоныПечати"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Parent"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Collection of Catalog_Номенклатура",
+                                    "type": "object",
+                                    "properties": {
+                                        "@count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to Catalog_Номенклатура",
+                "tags": [
+                    "Catalog_Номенклатура"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New entity",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Номенклатура({Ref_Key})": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from Catalog_Номенклатура by key",
+                "tags": [
+                    "Catalog_Номенклатура"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Predefined",
+                                    "PredefinedDataName",
+                                    "DataVersion",
+                                    "Description",
+                                    "Code",
+                                    "Parent_Key",
+                                    "IsFolder",
+                                    "DeletionMark",
+                                    "Артикул",
+                                    "ВидНоменклатуры",
+                                    "ВремяПроведения",
+                                    "КоличествоСеансов",
+                                    "НаименованиеСокращенное",
+                                    "ОбязательныйФотоотчет",
+                                    "ОписаниеУслуги",
+                                    "ШаблоныПечати_Base64Data",
+                                    "СтатьяДДС_Key",
+                                    "НазваниеПечати",
+                                    "Медсестра",
+                                    "Стажёр",
+                                    "СрокОплатыКурсаВДнях",
+                                    "СпособРасхода",
+                                    "ЕдиницаИзмерения_Key",
+                                    "СрокДействияКурсаВДнях",
+                                    "Медицинская",
+                                    "ИспользуетсяОборудование",
+                                    "ДоступноДляОнлайнЗаписи",
+                                    "ДниДоКонцаСрокаГодности",
+                                    "ЕстьКонтрольОстаков",
+                                    "НаправлениеДеятельности_Key",
+                                    "ИспользуемоеОборудование",
+                                    "КонтрольКритическихОстатков",
+                                    "ШаблоныПечати_Type",
+                                    "ШаблоныПечати"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Parent"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in Catalog_Номенклатура",
+                "tags": [
+                    "Catalog_Номенклатура"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New property values",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete entity from Catalog_Номенклатура",
+                "tags": [
+                    "Catalog_Номенклатура"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Номенклатура({Ref_Key})/Parent": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get related Parent",
+                "tags": [
+                    "Catalog_Номенклатура"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Predefined",
+                                    "PredefinedDataName",
+                                    "DataVersion",
+                                    "Description",
+                                    "Code",
+                                    "Parent_Key",
+                                    "IsFolder",
+                                    "DeletionMark",
+                                    "Артикул",
+                                    "ВидНоменклатуры",
+                                    "ВремяПроведения",
+                                    "КоличествоСеансов",
+                                    "НаименованиеСокращенное",
+                                    "ОбязательныйФотоотчет",
+                                    "ОписаниеУслуги",
+                                    "ШаблоныПечати_Base64Data",
+                                    "СтатьяДДС_Key",
+                                    "НазваниеПечати",
+                                    "Медсестра",
+                                    "Стажёр",
+                                    "СрокОплатыКурсаВДнях",
+                                    "СпособРасхода",
+                                    "ЕдиницаИзмерения_Key",
+                                    "СрокДействияКурсаВДнях",
+                                    "Медицинская",
+                                    "ИспользуетсяОборудование",
+                                    "ДоступноДляОнлайнЗаписи",
+                                    "ДниДоКонцаСрокаГодности",
+                                    "ЕстьКонтрольОстаков",
+                                    "НаправлениеДеятельности_Key",
+                                    "ИспользуемоеОборудование",
+                                    "КонтрольКритическихОстатков",
+                                    "ШаблоныПечати_Type",
+                                    "ШаблоныПечати"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Parent"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Номенклатура_ИспользуемоеОборудование": {
+            "get": {
+                "summary": "Get entities from Catalog_Номенклатура_ИспользуемоеОборудование",
+                "tags": [
+                    "Catalog_Номенклатура_ИспользуемоеОборудование"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Ref_Key desc",
+                                    "LineNumber",
+                                    "LineNumber desc",
+                                    "Оборудование_Key",
+                                    "Оборудование_Key desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Оборудование_Key"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Collection of Catalog_Номенклатура_ИспользуемоеОборудование",
+                                    "type": "object",
+                                    "properties": {
+                                        "@count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to Catalog_Номенклатура_ИспользуемоеОборудование",
+                "tags": [
+                    "Catalog_Номенклатура_ИспользуемоеОборудование"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New entity",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Номенклатура_ИспользуемоеОборудование(Ref_Key={Ref_Key},LineNumber={LineNumber})": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                {
+                    "name": "LineNumber",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: LineNumber",
+                    "schema": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from Catalog_Номенклатура_ИспользуемоеОборудование by key",
+                "tags": [
+                    "Catalog_Номенклатура_ИспользуемоеОборудование"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Оборудование_Key"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in Catalog_Номенклатура_ИспользуемоеОборудование",
+                "tags": [
+                    "Catalog_Номенклатура_ИспользуемоеОборудование"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New property values",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete entity from Catalog_Номенклатура_ИспользуемоеОборудование",
+                "tags": [
+                    "Catalog_Номенклатура_ИспользуемоеОборудование"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Номенклатура_КонтрольКритическихОстатков": {
+            "get": {
+                "summary": "Get entities from Catalog_Номенклатура_КонтрольКритическихОстатков",
+                "tags": [
+                    "Catalog_Номенклатура_КонтрольКритическихОстатков"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "Ref_Key desc",
+                                    "LineNumber",
+                                    "LineNumber desc",
+                                    "Подразделение_Key",
+                                    "Подразделение_Key desc",
+                                    "КритическийОстаток",
+                                    "КритическийОстаток desc",
+                                    "ОптимальныйОстаток",
+                                    "ОптимальныйОстаток desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Подразделение_Key",
+                                    "КритическийОстаток",
+                                    "ОптимальныйОстаток"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Collection of Catalog_Номенклатура_КонтрольКритическихОстатков",
+                                    "type": "object",
+                                    "properties": {
+                                        "@count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to Catalog_Номенклатура_КонтрольКритическихОстатков",
+                "tags": [
+                    "Catalog_Номенклатура_КонтрольКритическихОстатков"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New entity",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/Catalog_Номенклатура_КонтрольКритическихОстатков(Ref_Key={Ref_Key},LineNumber={LineNumber})": {
+            "parameters": [
+                {
+                    "name": "Ref_Key",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: Ref_Key",
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                {
+                    "name": "LineNumber",
+                    "in": "path",
+                    "required": true,
+                    "description": "key: LineNumber",
+                    "schema": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from Catalog_Номенклатура_КонтрольКритическихОстатков by key",
+                "tags": [
+                    "Catalog_Номенклатура_КонтрольКритическихОстатков"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Ref_Key",
+                                    "LineNumber",
+                                    "Подразделение_Key",
+                                    "КритическийОстаток",
+                                    "ОптимальныйОстаток"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in Catalog_Номенклатура_КонтрольКритическихОстатков",
+                "tags": [
+                    "Catalog_Номенклатура_КонтрольКритическихОстатков"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "New property values",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete entity from Catalog_Номенклатура_КонтрольКритическихОстатков",
+                "tags": [
+                    "Catalog_Номенклатура_КонтрольКритическихОстатков"
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/$batch": {
+            "post": {
+                "summary": "Send a group of requests",
+                "description": "Group multiple requests into a single request payload, see [Batch Requests](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_BatchRequests).\n\n*Please note that \"Try it out\" is not supported for this request.*",
+                "tags": [
+                    "Batch Requests"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "Batch request",
+                    "content": {
+                        "multipart/mixed;boundary=request-separator": {
+                            "schema": {
+                                "type": "string"
+                            },
+                            "example": "--request-separator\nContent-Type: application/http\nContent-Transfer-Encoding: binary\n\nGET Catalog_Контрагенты HTTP/1.1\nAccept: application/json\n\n\n--request-separator--"
+                        }
+                    }
+                },
+                "responses": {
+                    "202": {
+                        "description": "Batch response",
+                        "content": {
+                            "multipart/mixed": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "--response-separator\nContent-Type: application/http\n\nHTTP/1.1 200 OK\nContent-Type: application/json\n\n{...}\n--response-separator--"
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "StandardODATA.Catalog_Контрагенты": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Predefined": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "PredefinedDataName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "DataVersion": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Parent_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "IsFolder": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "DeletionMark": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "НаименованиеПолное": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ИНН": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "КПП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЮридическоеФизическоеЛицо": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Комментарий": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Банк": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерСчета": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "КоррСчет": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НаименованиеБанка": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ПрименяетБартер": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДатаПоследнейПоставки": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    },
+                    "ДатаСоздания": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    },
+                    "КонтактнаяИнформация": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация_RowType"
+                        }
+                    },
+                    "БартерныеКлиенты": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты_RowType"
+                        }
+                    },
+                    "Parent": {
+                        "nullable": true,
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты"
+                            }
+                        ]
+                    }
+                },
+                "title": "Catalog_Контрагенты"
+            },
+            "StandardODATA.Catalog_Контрагенты-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Predefined": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "PredefinedDataName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "DataVersion": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Parent_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "IsFolder": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "DeletionMark": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "НаименованиеПолное": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ИНН": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "КПП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЮридическоеФизическоеЛицо": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Комментарий": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Банк": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерСчета": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "КоррСчет": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НаименованиеБанка": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ПрименяетБартер": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДатаПоследнейПоставки": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    },
+                    "ДатаСоздания": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    },
+                    "КонтактнаяИнформация": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация_RowType-create"
+                        }
+                    },
+                    "БартерныеКлиенты": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты_RowType-create"
+                        }
+                    },
+                    "Parent": {
+                        "nullable": true,
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты-create"
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Ref_Key"
+                ],
+                "title": "Catalog_Контрагенты (for create)"
+            },
+            "StandardODATA.Catalog_Контрагенты-update": {
+                "type": "object",
+                "properties": {
+                    "Predefined": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "PredefinedDataName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "DataVersion": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Parent_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "IsFolder": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "DeletionMark": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "НаименованиеПолное": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ИНН": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "КПП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЮридическоеФизическоеЛицо": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Комментарий": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Банк": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерСчета": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "КоррСчет": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НаименованиеБанка": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ПрименяетБартер": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДатаПоследнейПоставки": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    },
+                    "ДатаСоздания": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    },
+                    "КонтактнаяИнформация": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация_RowType-update"
+                        }
+                    },
+                    "БартерныеКлиенты": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Контрагенты_БартерныеКлиенты_RowType-update"
+                        }
+                    }
+                },
+                "title": "Catalog_Контрагенты (for update)"
+            },
+            "StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Тип": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Вид_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Представление": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЗначенияПолей": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Страна": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Регион": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Город": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "АдресЭП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ДоменноеИмяСервера": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефона": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефонаБезКодов": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидДляСписка_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Значение": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "title": "Catalog_Контрагенты_КонтактнаяИнформация"
+            },
+            "StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Тип": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Вид_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Представление": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЗначенияПолей": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Страна": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Регион": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Город": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "АдресЭП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ДоменноеИмяСервера": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефона": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефонаБезКодов": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидДляСписка_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Значение": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "required": [
+                    "Ref_Key",
+                    "LineNumber"
+                ],
+                "title": "Catalog_Контрагенты_КонтактнаяИнформация (for create)"
+            },
+            "StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация-update": {
+                "type": "object",
+                "properties": {
+                    "Тип": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Вид_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Представление": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЗначенияПолей": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Страна": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Регион": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Город": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "АдресЭП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ДоменноеИмяСервера": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефона": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефонаБезКодов": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидДляСписка_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Значение": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "title": "Catalog_Контрагенты_КонтактнаяИнформация (for update)"
+            },
+            "StandardODATA.Catalog_Контрагенты_БартерныеКлиенты": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Клиент_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Контрагенты_БартерныеКлиенты"
+            },
+            "StandardODATA.Catalog_Контрагенты_БартерныеКлиенты-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Клиент_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "required": [
+                    "Ref_Key",
+                    "LineNumber"
+                ],
+                "title": "Catalog_Контрагенты_БартерныеКлиенты (for create)"
+            },
+            "StandardODATA.Catalog_Контрагенты_БартерныеКлиенты-update": {
+                "type": "object",
+                "properties": {
+                    "Клиент_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Контрагенты_БартерныеКлиенты (for update)"
+            },
+            "StandardODATA.Catalog_Номенклатура": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Predefined": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "PredefinedDataName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "DataVersion": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Parent_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "IsFolder": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "DeletionMark": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "Артикул": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидНоменклатуры": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВремяПроведения": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "КоличествоСеансов": {
+                        "type": "integer",
+                        "nullable": true,
+                        "format": "int16"
+                    },
+                    "НаименованиеСокращенное": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ОбязательныйФотоотчет": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ОписаниеУслуги": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ШаблоныПечати_Base64Data": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "base64url"
+                    },
+                    "СтатьяДДС_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "НазваниеПечати": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Медсестра": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "Стажёр": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "СрокОплатыКурсаВДнях": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "СпособРасхода": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЕдиницаИзмерения_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "СрокДействияКурсаВДнях": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Медицинская": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ИспользуетсяОборудование": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДоступноДляОнлайнЗаписи": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДниДоКонцаСрокаГодности": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "ЕстьКонтрольОстаков": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "НаправлениеДеятельности_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "ИспользуемоеОборудование": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование_RowType"
+                        }
+                    },
+                    "КонтрольКритическихОстатков": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков_RowType"
+                        }
+                    },
+                    "ШаблоныПечати_Type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ШаблоныПечати": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "base64url"
+                    },
+                    "Parent": {
+                        "nullable": true,
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура"
+                            }
+                        ]
+                    }
+                },
+                "title": "Catalog_Номенклатура"
+            },
+            "StandardODATA.Catalog_Номенклатура-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Predefined": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "PredefinedDataName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "DataVersion": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Parent_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "IsFolder": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "DeletionMark": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "Артикул": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидНоменклатуры": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВремяПроведения": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "КоличествоСеансов": {
+                        "type": "integer",
+                        "nullable": true,
+                        "format": "int16"
+                    },
+                    "НаименованиеСокращенное": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ОбязательныйФотоотчет": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ОписаниеУслуги": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ШаблоныПечати_Base64Data": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "base64url"
+                    },
+                    "СтатьяДДС_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "НазваниеПечати": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Медсестра": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "Стажёр": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "СрокОплатыКурсаВДнях": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "СпособРасхода": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЕдиницаИзмерения_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "СрокДействияКурсаВДнях": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Медицинская": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ИспользуетсяОборудование": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДоступноДляОнлайнЗаписи": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДниДоКонцаСрокаГодности": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "ЕстьКонтрольОстаков": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "НаправлениеДеятельности_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "ИспользуемоеОборудование": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование_RowType-create"
+                        }
+                    },
+                    "КонтрольКритическихОстатков": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков_RowType-create"
+                        }
+                    },
+                    "ШаблоныПечати_Type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ШаблоныПечати": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "base64url"
+                    },
+                    "Parent": {
+                        "nullable": true,
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура-create"
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Ref_Key"
+                ],
+                "title": "Catalog_Номенклатура (for create)"
+            },
+            "StandardODATA.Catalog_Номенклатура-update": {
+                "type": "object",
+                "properties": {
+                    "Predefined": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "PredefinedDataName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "DataVersion": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Parent_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "IsFolder": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "DeletionMark": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "Артикул": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидНоменклатуры": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВремяПроведения": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "КоличествоСеансов": {
+                        "type": "integer",
+                        "nullable": true,
+                        "format": "int16"
+                    },
+                    "НаименованиеСокращенное": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ОбязательныйФотоотчет": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ОписаниеУслуги": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ШаблоныПечати_Base64Data": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "base64url"
+                    },
+                    "СтатьяДДС_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "НазваниеПечати": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Медсестра": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "Стажёр": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "СрокОплатыКурсаВДнях": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "СпособРасхода": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЕдиницаИзмерения_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "СрокДействияКурсаВДнях": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Медицинская": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ИспользуетсяОборудование": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДоступноДляОнлайнЗаписи": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "ДниДоКонцаСрокаГодности": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "ЕстьКонтрольОстаков": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "НаправлениеДеятельности_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "ИспользуемоеОборудование": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование_RowType-update"
+                        }
+                    },
+                    "КонтрольКритическихОстатков": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков_RowType-update"
+                        }
+                    },
+                    "ШаблоныПечати_Type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ШаблоныПечати": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "base64url"
+                    }
+                },
+                "title": "Catalog_Номенклатура (for update)"
+            },
+            "StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Оборудование_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Номенклатура_ИспользуемоеОборудование"
+            },
+            "StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Оборудование_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "required": [
+                    "Ref_Key",
+                    "LineNumber"
+                ],
+                "title": "Catalog_Номенклатура_ИспользуемоеОборудование (for create)"
+            },
+            "StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование-update": {
+                "type": "object",
+                "properties": {
+                    "Оборудование_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Номенклатура_ИспользуемоеОборудование (for update)"
+            },
+            "StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Подразделение_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "КритическийОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    },
+                    "ОптимальныйОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    }
+                },
+                "title": "Catalog_Номенклатура_КонтрольКритическихОстатков"
+            },
+            "StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Подразделение_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "КритическийОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    },
+                    "ОптимальныйОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    }
+                },
+                "required": [
+                    "Ref_Key",
+                    "LineNumber"
+                ],
+                "title": "Catalog_Номенклатура_КонтрольКритическихОстатков (for create)"
+            },
+            "StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков-update": {
+                "type": "object",
+                "properties": {
+                    "Подразделение_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "КритическийОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    },
+                    "ОптимальныйОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    }
+                },
+                "title": "Catalog_Номенклатура_КонтрольКритическихОстатков (for update)"
+            },
+            "StandardODATA.TypeDescription": {
+                "type": "object",
+                "properties": {
+                    "Types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "NumberQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.NumberQualifiers"
+                    },
+                    "StringQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.StringQualifiers"
+                    },
+                    "DateQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.DateQualifiers"
+                    },
+                    "BinaryDataQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.BinaryDataQualifiers"
+                    }
+                },
+                "title": "TypeDescription"
+            },
+            "StandardODATA.TypeDescription-create": {
+                "type": "object",
+                "properties": {
+                    "Types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "NumberQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.NumberQualifiers-create"
+                    },
+                    "StringQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.StringQualifiers-create"
+                    },
+                    "DateQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.DateQualifiers-create"
+                    },
+                    "BinaryDataQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.BinaryDataQualifiers-create"
+                    }
+                },
+                "title": "TypeDescription (for create)"
+            },
+            "StandardODATA.TypeDescription-update": {
+                "type": "object",
+                "properties": {
+                    "Types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "NumberQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.NumberQualifiers-update"
+                    },
+                    "StringQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.StringQualifiers-update"
+                    },
+                    "DateQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.DateQualifiers-update"
+                    },
+                    "BinaryDataQualifiers": {
+                        "$ref": "#/components/schemas/StandardODATA.BinaryDataQualifiers-update"
+                    }
+                },
+                "title": "TypeDescription (for update)"
+            },
+            "StandardODATA.NumberQualifiers": {
+                "type": "object",
+                "properties": {
+                    "AllowedSign": {
+                        "type": "string"
+                    },
+                    "Digits": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "FractionDigits": {
+                        "type": "integer",
+                        "format": "int16"
+                    }
+                },
+                "title": "NumberQualifiers"
+            },
+            "StandardODATA.NumberQualifiers-create": {
+                "type": "object",
+                "properties": {
+                    "AllowedSign": {
+                        "type": "string"
+                    },
+                    "Digits": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "FractionDigits": {
+                        "type": "integer",
+                        "format": "int16"
+                    }
+                },
+                "title": "NumberQualifiers (for create)"
+            },
+            "StandardODATA.NumberQualifiers-update": {
+                "type": "object",
+                "properties": {
+                    "AllowedSign": {
+                        "type": "string"
+                    },
+                    "Digits": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "FractionDigits": {
+                        "type": "integer",
+                        "format": "int16"
+                    }
+                },
+                "title": "NumberQualifiers (for update)"
+            },
+            "StandardODATA.StringQualifiers": {
+                "type": "object",
+                "properties": {
+                    "AllowedLength": {
+                        "type": "string"
+                    },
+                    "Length": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                },
+                "title": "StringQualifiers"
+            },
+            "StandardODATA.StringQualifiers-create": {
+                "type": "object",
+                "properties": {
+                    "AllowedLength": {
+                        "type": "string"
+                    },
+                    "Length": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                },
+                "title": "StringQualifiers (for create)"
+            },
+            "StandardODATA.StringQualifiers-update": {
+                "type": "object",
+                "properties": {
+                    "AllowedLength": {
+                        "type": "string"
+                    },
+                    "Length": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                },
+                "title": "StringQualifiers (for update)"
+            },
+            "StandardODATA.DateQualifiers": {
+                "type": "object",
+                "properties": {
+                    "DateFractions": {
+                        "type": "string"
+                    }
+                },
+                "title": "DateQualifiers"
+            },
+            "StandardODATA.DateQualifiers-create": {
+                "type": "object",
+                "properties": {
+                    "DateFractions": {
+                        "type": "string"
+                    }
+                },
+                "title": "DateQualifiers (for create)"
+            },
+            "StandardODATA.DateQualifiers-update": {
+                "type": "object",
+                "properties": {
+                    "DateFractions": {
+                        "type": "string"
+                    }
+                },
+                "title": "DateQualifiers (for update)"
+            },
+            "StandardODATA.BinaryDataQualifiers": {
+                "type": "object",
+                "properties": {
+                    "AllowedLength": {
+                        "type": "string"
+                    },
+                    "Length": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                },
+                "title": "BinaryDataQualifiers"
+            },
+            "StandardODATA.BinaryDataQualifiers-create": {
+                "type": "object",
+                "properties": {
+                    "AllowedLength": {
+                        "type": "string"
+                    },
+                    "Length": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                },
+                "title": "BinaryDataQualifiers (for create)"
+            },
+            "StandardODATA.BinaryDataQualifiers-update": {
+                "type": "object",
+                "properties": {
+                    "AllowedLength": {
+                        "type": "string"
+                    },
+                    "Length": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    }
+                },
+                "title": "BinaryDataQualifiers (for update)"
+            },
+            "StandardODATA.PointInTime": {
+                "type": "object",
+                "properties": {
+                    "Ref": {
+                        "type": "string"
+                    },
+                    "Date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    }
+                },
+                "title": "PointInTime"
+            },
+            "StandardODATA.PointInTime-create": {
+                "type": "object",
+                "properties": {
+                    "Ref": {
+                        "type": "string"
+                    },
+                    "Date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    }
+                },
+                "title": "PointInTime (for create)"
+            },
+            "StandardODATA.PointInTime-update": {
+                "type": "object",
+                "properties": {
+                    "Ref": {
+                        "type": "string"
+                    },
+                    "Date": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2017-04-13T15:51:04Z"
+                    }
+                },
+                "title": "PointInTime (for update)"
+            },
+            "StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация_RowType": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Тип": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Вид_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Представление": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЗначенияПолей": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Страна": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Регион": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Город": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "АдресЭП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ДоменноеИмяСервера": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефона": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефонаБезКодов": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидДляСписка_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Значение": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "title": "Catalog_Контрагенты_КонтактнаяИнформация_RowType"
+            },
+            "StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация_RowType-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Тип": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Вид_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Представление": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЗначенияПолей": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Страна": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Регион": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Город": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "АдресЭП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ДоменноеИмяСервера": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефона": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефонаБезКодов": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидДляСписка_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Значение": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "title": "Catalog_Контрагенты_КонтактнаяИнформация_RowType (for create)"
+            },
+            "StandardODATA.Catalog_Контрагенты_КонтактнаяИнформация_RowType-update": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Тип": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Вид_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Представление": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ЗначенияПолей": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Страна": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Регион": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "Город": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "АдресЭП": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ДоменноеИмяСервера": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефона": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "НомерТелефонаБезКодов": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ВидДляСписка_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "Значение": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "title": "Catalog_Контрагенты_КонтактнаяИнформация_RowType (for update)"
+            },
+            "StandardODATA.Catalog_Контрагенты_БартерныеКлиенты_RowType": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Клиент_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Контрагенты_БартерныеКлиенты_RowType"
+            },
+            "StandardODATA.Catalog_Контрагенты_БартерныеКлиенты_RowType-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Клиент_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Контрагенты_БартерныеКлиенты_RowType (for create)"
+            },
+            "StandardODATA.Catalog_Контрагенты_БартерныеКлиенты_RowType-update": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Клиент_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Контрагенты_БартерныеКлиенты_RowType (for update)"
+            },
+            "StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование_RowType": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Оборудование_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Номенклатура_ИспользуемоеОборудование_RowType"
+            },
+            "StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование_RowType-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Оборудование_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Номенклатура_ИспользуемоеОборудование_RowType (for create)"
+            },
+            "StandardODATA.Catalog_Номенклатура_ИспользуемоеОборудование_RowType-update": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Оборудование_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    }
+                },
+                "title": "Catalog_Номенклатура_ИспользуемоеОборудование_RowType (for update)"
+            },
+            "StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков_RowType": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Подразделение_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "КритическийОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    },
+                    "ОптимальныйОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    }
+                },
+                "title": "Catalog_Номенклатура_КонтрольКритическихОстатков_RowType"
+            },
+            "StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков_RowType-create": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Подразделение_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "КритическийОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    },
+                    "ОптимальныйОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    }
+                },
+                "title": "Catalog_Номенклатура_КонтрольКритическихОстатков_RowType (for create)"
+            },
+            "StandardODATA.Catalog_Номенклатура_КонтрольКритическихОстатков_RowType-update": {
+                "type": "object",
+                "properties": {
+                    "Ref_Key": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "LineNumber": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "format": "int64",
+                        "example": "42"
+                    },
+                    "Подразделение_Key": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid",
+                        "example": "01234567-89ab-cdef-0123-456789abcdef"
+                    },
+                    "КритическийОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    },
+                    "ОптимальныйОстаток": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "nullable": true,
+                        "format": "double",
+                        "example": 3.14
+                    }
+                },
+                "title": "Catalog_Номенклатура_КонтрольКритическихОстатков_RowType (for update)"
+            },
+            "StandardODATA.AccountType": {
+                "type": "string",
+                "enum": [
+                    "Active",
+                    "ActivePassive",
+                    "Passive"
+                ],
+                "title": "AccountType"
+            },
+            "StandardODATA.AccountingRecordType": {
+                "type": "string",
+                "enum": [
+                    "Credit",
+                    "Debit"
+                ],
+                "title": "AccountingRecordType"
+            },
+            "StandardODATA.AccumulationRecordType": {
+                "type": "string",
+                "enum": [
+                    "Expense",
+                    "Receipt"
+                ],
+                "title": "AccumulationRecordType"
+            },
+            "StandardODATA.AllowedSign": {
+                "type": "string",
+                "enum": [
+                    "Any",
+                    "Nonnegative"
+                ],
+                "title": "AllowedSign"
+            },
+            "StandardODATA.AllowedLength": {
+                "type": "string",
+                "enum": [
+                    "Fixed",
+                    "Variable"
+                ],
+                "title": "AllowedLength"
+            },
+            "StandardODATA.DateFractions": {
+                "type": "string",
+                "enum": [
+                    "Date",
+                    "DateTime",
+                    "Time"
+                ],
+                "title": "DateFractions"
+            },
+            "count": {
+                "anyOf": [
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "string"
+                    }
+                ],
+                "description": "The number of entities in the collection. Available when using the [$count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount) query option."
+            },
+            "error": {
+                "type": "object",
+                "required": [
+                    "error"
+                ],
+                "properties": {
+                    "error": {
+                        "type": "object",
+                        "required": [
+                            "code",
+                            "message"
+                        ],
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "object",
+                                "required": [
+                                    "lang",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "lang": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "innererror": {
+                                "type": "object",
+                                "description": "The structure of this object is service-specific"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "top": {
+                "name": "$top",
+                "in": "query",
+                "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+                "schema": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "example": 50
+            },
+            "skip": {
+                "name": "$skip",
+                "in": "query",
+                "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+                "schema": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "count": {
+                "name": "$count",
+                "in": "query",
+                "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+                "schema": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "responses": {
+            "error": {
+                "description": "Error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/error"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

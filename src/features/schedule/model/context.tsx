@@ -247,23 +247,6 @@ interface ScheduleProviderProps {
   children: ReactNode;
 }
 
-// Компонент-обертка для слота с выбираемыми временными слотами
-interface SlotContentWrapperProps {
-  info: {
-    date: Date;
-    resource?: { id: string };
-    view: { type: string };
-  };
-}
-
-const SlotContentWrapper: React.FC<
-  SlotContentWrapperProps
-> = (/* { info } */) => {
-  // Больше не используем SelectableTimeSlot, так как стилизация происходит через CSS
-  // Просто возвращаем null
-  return null;
-};
-
 // Провайдер контекста
 export const ScheduleProvider: React.FC<ScheduleProviderProps> = ({
   children,

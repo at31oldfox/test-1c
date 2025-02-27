@@ -69,7 +69,7 @@ export const __mock = [
   },
 ];
 
-export const fetchMockData = async (page: number, filters: TNamedFilter[]) => {
+export const fetchMockData = async (page: number, _filters: TNamedFilter[]) => {
   const gData = new Array(10).fill('').map((_, index) => {
     return {
       id: page + index,
@@ -108,7 +108,10 @@ export const fetchMockData = async (page: number, filters: TNamedFilter[]) => {
   } as TApiResponse;
 };
 
-export const _fetchMockData = async (page: number, filters: TNamedFilter[]) => {
+export const _fetchMockData = async (
+  page: number,
+  _filters: TNamedFilter[]
+) => {
   const result = await getRecordingsWithStatus({
     paginate: true,
     page,
@@ -130,12 +133,12 @@ export const _fetchMockData = async (page: number, filters: TNamedFilter[]) => {
     "specialistPost": "Косметолог",
     "documentSum": 20230,
     "currentRecordingStatus": "Предварительная",
-    "services": "   • Лазерная коррекция\n   • Лазерное омоложение\n   • Маникюр + покрытие гель-лаком",
+    "services": " • Лазерная коррекция\n • Лазерное омоложение\n • Маникюр + покрытие гель-лаком",
     "phone": "+7 (989) 595 - 95 - 95"
 }
  */
 
-  const gData = result.data.map((item) => {
+  const gData = (result as any).data.map((item: any) => {
     return {
       id: item.recordingId,
       date: new Date(item.recordingDate),
@@ -156,7 +159,7 @@ export const _fetchMockData = async (page: number, filters: TNamedFilter[]) => {
     meta: {
       totalRowCount: 100,
       page,
-      isLast: !result.data || !result.data.length,
+      isLast: !(result as any).data || !(result as any).data.length,
       filters: [
         { name: 'amount', value: [1000, 5000] },
         { name: 'employee', value: ['Петрова0 Мария', 'Петрова1 Мария'] },

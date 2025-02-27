@@ -1,6 +1,4 @@
-import React, { useCallback } from 'react';
-
-import { useSlotContext } from './model/slotContext';
+import React from 'react';
 
 /**
  * Компонент для отображения выбираемого временного слота
@@ -11,15 +9,8 @@ export const SelectableTimeSlot: React.FC<{
   date: Date;
   startTime: string;
   endTime: string;
-}> = ({ resourceId, date }) => {
-  const { selectedSlot, selectSlot } = useSlotContext();
-  const isSelected =
-    selectedSlot?.resourceId === resourceId &&
-    selectedSlot?.date.toDateString() === date.toDateString();
-
-  const handleClick = useCallback(() => {
-    selectSlot(resourceId, date);
-  }, [resourceId, date, selectSlot]);
+}> = (/* { resourceId, date } */) => {
+  // const { selectedSlot, selectSlot } = useSlotContext();
 
   // Этот компонент больше не используется, так как стилизация происходит через CSS
   return null;

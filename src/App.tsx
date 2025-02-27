@@ -27,7 +27,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
-      <Router basename="/aurumFrontend">
+      <Router basename="/">
         <Routes>
           <Route path="/menu" element={<LeftMenu />} />
           <Route path="/schedule" element={<Schedule />} />

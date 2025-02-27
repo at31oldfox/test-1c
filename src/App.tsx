@@ -31,10 +31,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/menu" element={<LeftMenu />} />
           <Route path="/schedule" element={<Schedule />} />
-          <Route
-            path="/"
-            element={<Navigate to="/cancelled-entries" replace />}
-          />
+          <Route path="/" element={<Navigate to="/Schedule" replace />} />
           <Route path="/cancelled-entries" element={<CancelledEntries />} />
           <Route path="/client-arrived" element={<ClientArrived />} />
           <Route

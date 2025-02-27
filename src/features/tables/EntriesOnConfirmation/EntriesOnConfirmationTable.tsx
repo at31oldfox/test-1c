@@ -49,10 +49,10 @@ export const EntriesOnConfirmationTable = () => {
       /*select: (data) => {
         const _data = data?.pages?.flatMap((page) => page.data) || [];
         return { data: _data, meta: { totalRowCount: 1400 } } as TApiResponse;
-      },*/
+      },
       onPageChange: (page: number) => {
         // ... existing code ...
-      },
+      },*/
     });
 
   const flatData: DataItem[] = useMemo(

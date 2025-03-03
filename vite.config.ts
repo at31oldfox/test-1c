@@ -11,8 +11,10 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      targets: ['defaults', 'IE 11'],
+      targets: ['ie >= 11', 'defaults'],
       polyfills: true,
+      modernPolyfills: true,
+      additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
     }),
   ],
   css: {
@@ -26,6 +28,7 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     outDir: '../dist',
+    target: ['es2015', 'edge79', 'firefox67', 'chrome64', 'safari12'],
     rollupOptions: {
       output: {
         manualChunks: undefined,

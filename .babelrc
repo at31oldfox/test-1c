@@ -1,11 +1,16 @@
 {
-    "presets": [
-      ["@babel/preset-env", {
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3.36.0",
         "targets": {
           "browsers": ["last 2 versions", "safari >= 8"]
         }
-      }],
-      "@babel/preset-react"
+      }
     ],
-    "plugins": ["@babel/plugin-transform-runtime"]
-  }
+    "@babel/preset-react"
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
